@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Indicadores</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Linguagem</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Gestão</value>
+  </data>
+  <data name="Managements" xml:space="preserve">
+    <value>Gestões</value>
+  </data>
+  <data name="MTO" xml:space="preserve">
+    <value>TMO</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Carteira</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="Supervision" xml:space="preserve">
+    <value>Supervisão</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="Time_Managements" xml:space="preserve">
+    <value>Tempo de Gestão</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="InBox" xml:space="preserve">
+    <value>Caixa de entrada</value>
+  </data>
+  <data name="Distribution" xml:space="preserve">
+    <value>Distribuição</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contato</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Data de Fim</value>
+  </data>
+  <data name="EstimatedEndDate" xml:space="preserve">
+    <value>Data prevista para o fim</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operador</value>
+  </data>
+  <data name="Overdue" xml:space="preserve">
+    <value>Antiguidade (Dias)</value>
+  </data>
+  <data name="Person" xml:space="preserve">
+    <value>Pessoa</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produto</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Data de Início</value>
+  </data>
+  <data name="TotalUSD" xml:space="preserve">
+    <value>Total(USD)</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Inglês</value>
+  </data>
+  <data name="Indicator" xml:space="preserve">
+    <value>Indicador</value>
+  </data>
+  <data name="Portuguese" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Espanhol</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>Contas</value>
+  </data>
+  <data name="Amount_Collect" xml:space="preserve">
+    <value>Valor a Receber</value>
+  </data>
+  <data name="AssignedAccounts" xml:space="preserve">
+    <value>Contas Atribuídas</value>
+  </data>
+  <data name="btnOk" xml:space="preserve">
+    <value>Aceitar</value>
+  </data>
+  <data name="Goal" xml:space="preserve">
+    <value>Meta</value>
+  </data>
+  <data name="Idle_Time" xml:space="preserve">
+    <value>Tempo inactivo</value>
+  </data>
+  <data name="Indicators" xml:space="preserve">
+    <value>Indicadores</value>
+  </data>
+  <data name="Managements_Day" xml:space="preserve">
+    <value>Gestões por dia</value>
+  </data>
+  <data name="Negatives" xml:space="preserve">
+    <value>Negativas</value>
+  </data>
+  <data name="Neutrals" xml:space="preserve">
+    <value>Neutras</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="Positives" xml:space="preserve">
+    <value>Positivas</value>
+  </data>
+  <data name="Real" xml:space="preserve">
+    <value>Real</value>
+  </data>
+  <data name="titLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="titSystem" xml:space="preserve">
+    <value>Sistema de Cobranças - Veconinter</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Totals</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Atribuir</value>
+  </data>
+  <data name="AssignPerson" xml:space="preserve">
+    <value>Atribuir a uma Pessoa</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="CreateRule" xml:space="preserve">
+    <value>Criar Regra</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="MailFrom" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="MailRead" xml:space="preserve">
+    <value>Lido</value>
+  </data>
+  <data name="msgErrorManagement" xml:space="preserve">
+    <value>Erro ao salvar a gestão</value>
+  </data>
+  <data name="msgMailAssigned" xml:space="preserve">
+    <value>Os e-mails foram atribuídos à pessoa com sucesso</value>
+  </data>
+  <data name="msgNoPerSel" xml:space="preserve">
+    <value>Você não selecionou nenhuma pessoa para gestionar</value>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Restante</value>
+  </data>
+  <data name="RemainingLocal" xml:space="preserve">
+    <value>Restante(Local)</value>
+  </data>
+  <data name="RemainingUSD" xml:space="preserve">
+    <value>Restante(USD)</value>
+  </data>
+  <data name="Rif" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Assunto</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TotalLocal" xml:space="preserve">
+    <value>Total(Local)</value>
+  </data>
+  <data name="UnclassifiedMail" xml:space="preserve">
+    <value>E-mail não Classificado</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="ClassifiedButNotRead" xml:space="preserve">
+    <value>Classificados mas não Lidos</value>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Regras</value>
+  </data>
+  <data name="msgExpiredReminders" xml:space="preserve">
+    <value>Você tem # lembretes até</value>
+  </data>
+  <data name="msgMustSelectPerson" xml:space="preserve">
+    <value>Você deve selecionar uma pessoa</value>
+  </data>
+  <data name="Supervising" xml:space="preserve">
+    <value>Supervisionando</value>
+  </data>
+  <data name="AssignedPersons" xml:space="preserve">
+    <value>Pessoas Atribuídas</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EndManagement" xml:space="preserve">
+    <value>Finalizar Gestão</value>
+  </data>
+  <data name="PersonData" xml:space="preserve">
+    <value>Pessoa de Dados</value>
+  </data>
+  <data name="Phones" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="TaxAddress" xml:space="preserve">
+    <value>Domicílio Fiscal</value>
+  </data>
+  <data name="ActiveAccounts" xml:space="preserve">
+    <value>Contas Ativas</value>
+  </data>
+  <data name="Claim" xml:space="preserve">
+    <value>Reclamação</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>Reclamações</value>
+  </data>
+  <data name="CurrentManagement" xml:space="preserve">
+    <value>Gestão Atual</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="MailAttach" xml:space="preserve">
+    <value>Anexar</value>
+  </data>
+  <data name="MailBCC" xml:space="preserve">
+    <value>CCO</value>
+  </data>
+  <data name="MailCC" xml:space="preserve">
+    <value>CC</value>
+  </data>
+  <data name="MailTo" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="ManagementHistory" xml:space="preserve">
+    <value>Histórico de Gestão</value>
+  </data>
+  <data name="NewManagement" xml:space="preserve">
+    <value>Nova Gestão</value>
+  </data>
+  <data name="OtherActivities" xml:space="preserve">
+    <value>Outras Atividades</value>
+  </data>
+  <data name="OutstandingAccounts" xml:space="preserve">
+    <value>Análise de Antiguidade</value>
+  </data>
+  <data name="PaymentCommitments" xml:space="preserve">
+    <value>Compromissos de Pagamento</value>
+  </data>
+  <data name="Payments" xml:space="preserve">
+    <value>Pagamentos</value>
+  </data>
+  <data name="ReceivedMail" xml:space="preserve">
+    <value>E-mail Recebido</value>
+  </data>
+  <data name="SaveManagement" xml:space="preserve">
+    <value>Salvar Gestão</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>Enviar E-mail</value>
+  </data>
+  <data name="SentMail" xml:space="preserve">
+    <value>E-mail Enviado</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Carregando</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Montante</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Razão</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Moeda</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Depósito</value>
+  </data>
+  <data name="msgMustEnterDescription" xml:space="preserve">
+    <value>Você deve digitar uma descrição</value>
+  </data>
+  <data name="msgMustEnterReference" xml:space="preserve">
+    <value>Você deve digitar uma referência</value>
+  </data>
+  <data name="msgNoBanks" xml:space="preserve">
+    <value>Não há bancos registrados para este país, contate o departamento de sistemas para resolver esta situação</value>
+  </data>
+  <data name="msgPaymentExceedDebt" xml:space="preserve">
+    <value>Há itens em que o valor do pagamento exceder o montante da dívida</value>
+  </data>
+  <data name="msgPaymentSaved" xml:space="preserve">
+    <value>O pagamento foi salvo com sucesso</value>
+  </data>
+  <data name="msgPaymentsDiffersTotal" xml:space="preserve">
+    <value>A soma dos pagamentos difere do total</value>
+  </data>
+  <data name="msgPaymentWasntSaved" xml:space="preserve">
+    <value>O pagamento não foi salvo</value>
+  </data>
+  <data name="NewPayment" xml:space="preserve">
+    <value>Novo Pagamento</value>
+  </data>
+  <data name="PaymentTotal" xml:space="preserve">
+    <value>Total do Pagamento</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referência</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transferência</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="Applicable" xml:space="preserve">
+    <value>Aplicável</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Aberto</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MarkAsPersonal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReplyAll" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AttachOriginalEmail" xml:space="preserve">
+    <value>Anexar E-mail Original</value>
+  </data>
+  <data name="OriginalEmail" xml:space="preserve">
+    <value>E-mail Original</value>
+  </data>
+  <data name="PersonManagements" xml:space="preserve">
+    <value>Gestões por Pessoa</value>
+  </data>
+  <data name="BeginManagement" xml:space="preserve">
+    <value>Iniciar Gestão</value>
+  </data>
+  <data name="AccountsInCampaign" xml:space="preserve">
+    <value>Contas de campanha</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Ativa</value>
+  </data>
+  <data name="Campaign" xml:space="preserve">
+    <value>Campanha</value>
+  </data>
+  <data name="Campaigns" xml:space="preserve">
+    <value>Campanhas</value>
+  </data>
+  <data name="TotalAccounts" xml:space="preserve">
+    <value>Total de Contas</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Peso</value>
+  </data>
+  <data name="DeliveryDate" xml:space="preserve">
+    <value>Data de Entrega</value>
+  </data>
+  <data name="PaymentCash" xml:space="preserve">
+    <value>Valor Dinheiro</value>
+  </data>
+  <data name="PaymentCheck" xml:space="preserve">
+    <value>Valor Cheques</value>
+  </data>
+  <data name="LastManagement" xml:space="preserve">
+    <value>Última Gestão</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="Notices" xml:space="preserve">
+    <value>Avisos</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="DeliveryAddress" xml:space="preserve">
+    <value>Endereço de Entrega</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Lembrete</value>
+  </data>
+  <data name="Reminders" xml:space="preserve">
+    <value>Lembretes</value>
+  </data>
+  <data name="CancelationDate" xml:space="preserve">
+    <value>Fecha de Término</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Data Criação</value>
+  </data>
+  <data name="Creator" xml:space="preserve">
+    <value>Criador</value>
+  </data>
+  <data name="OriginalDate" xml:space="preserve">
+    <value>Data Original</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Baixar</value>
+  </data>
+  <data name="Supplanting" xml:space="preserve">
+    <value>Suplantando</value>
+  </data>
+  <data name="LastOperator" xml:space="preserve">
+    <value>Último Operador</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>Fim</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentário</value>
+  </data>
+  <data name="NewReminder" xml:space="preserve">
+    <value>Novo Lembrete</value>
+  </data>
+  <data name="StaffUnderSupervision" xml:space="preserve">
+    <value>Pessoal Sob Supervisão</value>
+  </data>
+  <data name="GeneralReports" xml:space="preserve">
+    <value>Relatórios Gerais</value>
+  </data>
+  <data name="ManagementsOfTheDay" xml:space="preserve">
+    <value>Gestão do dia:</value>
+  </data>
+  <data name="ManagementsPerWeek" xml:space="preserve">
+    <value>Gestão por semana:</value>
+  </data>
+  <data name="PeopleManaged" xml:space="preserve">
+    <value>Pessoas gerenciados</value>
+  </data>
+  <data name="ReportsForSupervisors" xml:space="preserve">
+    <value>Relatórios para Supervisores</value>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>Reverter</value>
+  </data>
+  <data name="AutomaticDistributionOfAccountsToCampaign" xml:space="preserve">
+    <value>Distribuição Automática de Contas da Campanha</value>
+  </data>
+  <data name="AutomaticDistributionOfAccountsToOperators" xml:space="preserve">
+    <value>Distribuição Automática de Contas Operadores</value>
+  </data>
+  <data name="Commitments" xml:space="preserve">
+    <value>Compromissos</value>
+  </data>
+  <data name="Consult" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="CreateNewNotice" xml:space="preserve">
+    <value>Criar novo Aviso</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportação</value>
+  </data>
+  <data name="Operators" xml:space="preserve">
+    <value>Operadores</value>
+  </data>
+  <data name="PaymentsToOperator" xml:space="preserve">
+    <value>Pagamentos a operador</value>
+  </data>
+  <data name="PerformedManagements" xml:space="preserve">
+    <value>Gestão concluído</value>
+  </data>
+  <data name="RulesOfDistribution" xml:space="preserve">
+    <value>Regras de Distribuição</value>
+  </data>
+  <data name="SystemInputsAndOutputs" xml:space="preserve">
+    <value>Entradas e Saídas do Sistema</value>
+  </data>
+  <data name="UnassignedAccounts" xml:space="preserve">
+    <value>Contas não atribuídos</value>
+  </data>
+  <data name="Workflows" xml:space="preserve">
+    <value>Os fluxos de trabalho</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tudo</value>
+  </data>
+  <data name="DateUntil" xml:space="preserve">
+    <value>data e até</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Correr</value>
+  </data>
+  <data name="Listing" xml:space="preserve">
+    <value>Listagem</value>
+  </data>
+  <data name="Managed" xml:space="preserve">
+    <value>Gerenciado</value>
+  </data>
+  <data name="NewRule" xml:space="preserve">
+    <value>Nova Regra</value>
+  </data>
+  <data name="NoManaged" xml:space="preserve">
+    <value>Não Gerenciado</value>
+  </data>
+  <data name="SelectionRulesOfAuditors" xml:space="preserve">
+    <value>Regras de Seleção de Contas</value>
+  </data>
+  <data name="TypeOfReport" xml:space="preserve">
+    <value>Tipo de Relatório</value>
+  </data>
+  <data name="ActiveAccountsInTheCampaign" xml:space="preserve">
+    <value>Contas activo na Campanha</value>
+  </data>
+  <data name="AssignOperator" xml:space="preserve">
+    <value>Atribuir Operador</value>
+  </data>
+  <data name="AssignToCampaign" xml:space="preserve">
+    <value>Atribuir à Campanha</value>
+  </data>
+  <data name="AutomaticAssignment" xml:space="preserve">
+    <value>Alocação Automática</value>
+  </data>
+  <data name="AutomaticDistributionOfAccountsOperators" xml:space="preserve">
+    <value>Distribuição Automática de contas a Operadores</value>
+  </data>
+  <data name="CampaignManagement" xml:space="preserve">
+    <value>Gerenciamento de campanhas</value>
+  </data>
+  <data name="CampaignStatistics" xml:space="preserve">
+    <value>Estatísticas da campanha</value>
+  </data>
+  <data name="ClientType" xml:space="preserve">
+    <value>Tipo de Cliente</value>
+  </data>
+  <data name="DoASearchToDisplayData" xml:space="preserve">
+    <value>Faça uma pesquisa para exibir os dados ...</value>
+  </data>
+  <data name="DormantAccountsInCampaign" xml:space="preserve">
+    <value>Contas inativas em Campanha</value>
+  </data>
+  <data name="ExcludeOtherCampaignsToAssignToThis" xml:space="preserve">
+    <value>Excluir outras campanhas para atribuir a este</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>Campo:</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtro</value>
+  </data>
+  <data name="Flow" xml:space="preserve">
+    <value>Fluxo</value>
+  </data>
+  <data name="Flows" xml:space="preserve">
+    <value>Fluxos</value>
+  </data>
+  <data name="FreeManagement" xml:space="preserve">
+    <value>Auto-gestão</value>
+  </data>
+  <data name="InactiveAccounts" xml:space="preserve">
+    <value>Contas Inativas</value>
+  </data>
+  <data name="ListOfUnallocatedAccounts" xml:space="preserve">
+    <value>Lista de Contas não atribuídos</value>
+  </data>
+  <data name="NewCampaign" xml:space="preserve">
+    <value>Nova campanha</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Seguinte</value>
+  </data>
+  <data name="NotAssign" xml:space="preserve">
+    <value>Não Atribuir</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Operações</value>
+  </data>
+  <data name="OperationsOfTheCampaign" xml:space="preserve">
+    <value>Operações da Campanha</value>
+  </data>
+  <data name="OperatorsAssignedToCampaign" xml:space="preserve">
+    <value>Operadores atribuídos a Campanha</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Proprietário</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="Rule" xml:space="preserve">
+    <value>Regra</value>
+  </data>
+  <data name="RuleCriteria" xml:space="preserve">
+    <value>Critérios da regra</value>
+  </data>
+  <data name="RuleOut" xml:space="preserve">
+    <value>Regra de Saída</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Estatística</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Passo</value>
+  </data>
+  <data name="Step1" xml:space="preserve">
+    <value>Passo 1: Escolha um nome para sua campanha</value>
+  </data>
+  <data name="Step10" xml:space="preserve">
+    <value>Passo 10: Diga uma regra de saída para a campanha</value>
+  </data>
+  <data name="Step2" xml:space="preserve">
+    <value>Passo 2: Selecione as datas para a sua campanha</value>
+  </data>
+  <data name="Step3" xml:space="preserve">
+    <value>Passo 3: Selecione a regra para a seleção de contas</value>
+  </data>
+  <data name="Step4" xml:space="preserve">
+    <value>Passo 4: Selecionar operadores que irão gerenciar estas contas</value>
+  </data>
+  <data name="Step5" xml:space="preserve">
+    <value>Passo 5: Selecione A forma vai distribuir as contas entre estes operadores</value>
+  </data>
+  <data name="Step6" xml:space="preserve">
+    <value>Passo 6: Escolha do fluxo de colecções aplicados a essas contas e o passo inicial deste fluxo</value>
+  </data>
+  <data name="Step7" xml:space="preserve">
+    <value>Passo 7: Verifique a distribuição dos escores entre os operadores</value>
+  </data>
+  <data name="Step8" xml:space="preserve">
+    <value>Passo 8: Definir um valor-alvo das coleções</value>
+  </data>
+  <data name="Step9" xml:space="preserve">
+    <value>Passo 9: Especifique o tipo de contas de atribuição gratuita de Campanha</value>
+  </data>
+  <data name="TargetAmount" xml:space="preserve">
+    <value>Alvo Quantia</value>
+  </data>
+  <data name="TypeOfAssignment" xml:space="preserve">
+    <value>Tipo de Atribuição</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Active1" xml:space="preserve">
+    <value>Ativo</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Zona</value>
+  </data>
+  <data name="Charge" xml:space="preserve">
+    <value>Função</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>Data a Partir</value>
+  </data>
+  <data name="DateUp" xml:space="preserve">
+    <value>Data Até</value>
+  </data>
+  <data name="DischargeDate" xml:space="preserve">
+    <value>Data de saída</value>
+  </data>
+  <data name="EmailSignature" xml:space="preserve">
+    <value>Assinatura de E-mail</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>extensão</value>
+  </data>
+  <data name="JoinDate" xml:space="preserve">
+    <value>Data de Registro</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Nível</value>
+  </data>
+  <data name="Negative" xml:space="preserve">
+    <value>Negativo</value>
+  </data>
+  <data name="Neutral" xml:space="preserve">
+    <value>Neutro</value>
+  </data>
+  <data name="NewOperator" xml:space="preserve">
+    <value>Novo Operador</value>
+  </data>
+  <data name="OperatorsUnderSupervision" xml:space="preserve">
+    <value>Operadores sob supervisão</value>
+  </data>
+  <data name="PaymentsToCollector" xml:space="preserve">
+    <value>Pagamentos a Cobrador</value>
+  </data>
+  <data name="Positive" xml:space="preserve">
+    <value>Positivo</value>
+  </data>
+  <data name="Supervisor" xml:space="preserve">
+    <value>Supervisor</value>
+  </data>
+  <data name="UpdateMailPassword" xml:space="preserve">
+    <value>Atualize a senha de e-mail</value>
+  </data>
+  <data name="FileFromPC" xml:space="preserve">
+    <value>Arquivo do seu computador</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Posição</value>
+  </data>
+  <data name="Office" xml:space="preserve">
+    <value>Escritório</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentários</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="Severity" xml:space="preserve">
+    <value>Severidade</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="MailFromAdministrator" xml:space="preserve">
+    <value>E-mails enviados ao Administrador</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtros</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="AssignmentDate" xml:space="preserve">
+    <value>Atribuição Data</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>Chamada</value>
+  </data>
+  <data name="Calls" xml:space="preserve">
+    <value>Chamadas</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duração</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Recording" xml:space="preserve">
+    <value>Gravação</value>
+  </data>
+  <data name="EffectiveDuration" xml:space="preserve">
+    <value>Duração Efetiva</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Conta</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Corrente</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Taxa De Câmbio</value>
+  </data>
+  <data name="M120" xml:space="preserve">
+    <value>&gt;120</value>
+  </data>
+  <data name="M180" xml:space="preserve">
+    <value>&gt;180</value>
+  </data>
+  <data name="M30" xml:space="preserve">
+    <value>&gt;30</value>
+  </data>
+  <data name="M45" xml:space="preserve">
+    <value>&gt;45</value>
+  </data>
+  <data name="M60" xml:space="preserve">
+    <value>&gt;60</value>
+  </data>
+  <data name="M90" xml:space="preserve">
+    <value>&gt;90</value>
+  </data>
+  <data name="OperatorsThatCanImpersonateMe" xml:space="preserve">
+    <value>Operadores que pode me substituir</value>
+  </data>
+  <data name="OperatorsThatICanImpersonate" xml:space="preserve">
+    <value>Operadores que posso substituir</value>
+  </data>
+  <data name="Goals" xml:space="preserve">
+    <value>Metas</value>
+  </data>
+  <data name="Exclusions" xml:space="preserve">
+    <value>Exclusões</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Por favor aguarde...</value>
+  </data>
+  <data name="Perc" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>Percentagem</value>
+  </data>
+  <data name="Collected" xml:space="preserve">
+    <value>Descontado</value>
+  </data>
+  <data name="Effectiveness" xml:space="preserve">
+    <value>Eficácia</value>
+  </data>
+  <data name="AssignedOperator" xml:space="preserve">
+    <value>Operador Designado</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>Modelos</value>
+  </data>
+  <data name="NewTemplates" xml:space="preserve">
+    <value>Novo Modelo</value>
+  </data>
+  <data name="DesignTemplate" xml:space="preserve">
+    <value>Desing do Modelo</value>
+  </data>
+  <data name="msgvalidatedate" xml:space="preserve">
+    <value>Você deve atribuir uma data de entrada.</value>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Associated_Management" xml:space="preserve">
+    <value>Gestao Associada</value>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>Pendente Excluir</value>
+  </data>
+  <data name="PendingEntry" xml:space="preserve">
+    <value>Entrada Pendente</value>
+  </data>
+  <data name="ActivityForSupervisors" xml:space="preserve">
+    <value>Atividades supervisor</value>
+  </data>
+  <data name="PhoneManager" xml:space="preserve">
+    <value>Gestor Telefone</value>
+  </data>
+  <data name="ActionCompleted" xml:space="preserve">
+    <value>A ação foi realizada com sucesso</value>
+  </data>
+  <data name="Goalsset" xml:space="preserve">
+    <value>Estabelecimento de Metas</value>
+  </data>
+  <data name="PercGoalSet" xml:space="preserve">
+    <value>% Estabelecimento de Metas</value>
+  </data>
+</root>

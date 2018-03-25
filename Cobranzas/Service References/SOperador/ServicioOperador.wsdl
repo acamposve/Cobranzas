@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioOperador" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" />
+      <xsd:import schemaLocation="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ServiciosCobranzas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioOperador_Operadores_lst_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_lst" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_lst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_lstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Suplantar_lst_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Suplantar_lst" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Suplantar_lst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Suplantar_lstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Suplantarme_lst_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Suplantarme_lst" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Suplantarme_lst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Suplantarme_lstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_sel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_sel" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_sel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_selResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_del_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_del" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_del_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_delResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_sav_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_sav" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_sav_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_savResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operador_Metas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operador_Metas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operador_Metas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operador_MetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_DistribucionOperadores_Ejecutar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DistribucionOperadores_Ejecutar" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_DistribucionOperadores_Ejecutar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DistribucionOperadores_EjecutarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Asignaciones_lst_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Asignaciones_lst" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Asignaciones_lst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Asignaciones_lstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Persona_lst_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Persona_lst" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Operadores_Persona_lst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operadores_Persona_lstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Nombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:Nombre" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Nombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Logins_rpt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logins_rpt" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Logins_rpt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Logins_rptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Salir_InputMessage">
+    <wsdl:part name="parameters" element="tns:Salir" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Salir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Compromisos_rpt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Compromisos_rpt" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_Compromisos_rpt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Compromisos_rptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_ListarOperadoresSUpervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarOperadoresSUpervisor" />
+  </wsdl:message>
+  <wsdl:message name="IServicioOperador_ListarOperadoresSUpervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarOperadoresSUpervisorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioOperador">
+    <wsdl:operation name="Operadores_lst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_lst" message="tns:IServicioOperador_Operadores_lst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_lstResponse" message="tns:IServicioOperador_Operadores_lst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Suplantar_lst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Suplantar_lst" message="tns:IServicioOperador_Operadores_Suplantar_lst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Suplantar_lstResponse" message="tns:IServicioOperador_Operadores_Suplantar_lst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Suplantarme_lst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Suplantarme_lst" message="tns:IServicioOperador_Operadores_Suplantarme_lst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Suplantarme_lstResponse" message="tns:IServicioOperador_Operadores_Suplantarme_lst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_sel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_sel" message="tns:IServicioOperador_Operadores_sel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_selResponse" message="tns:IServicioOperador_Operadores_sel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_del">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_del" message="tns:IServicioOperador_Operadores_del_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_delResponse" message="tns:IServicioOperador_Operadores_del_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_sav">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_sav" message="tns:IServicioOperador_Operadores_sav_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_savResponse" message="tns:IServicioOperador_Operadores_sav_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operador_Metas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operador_Metas" message="tns:IServicioOperador_Operador_Metas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operador_MetasResponse" message="tns:IServicioOperador_Operador_Metas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DistribucionOperadores_Ejecutar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/DistribucionOperadores_Ejecutar" message="tns:IServicioOperador_DistribucionOperadores_Ejecutar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/DistribucionOperadores_EjecutarResponse" message="tns:IServicioOperador_DistribucionOperadores_Ejecutar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Asignaciones_lst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Asignaciones_lst" message="tns:IServicioOperador_Operadores_Asignaciones_lst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Asignaciones_lstResponse" message="tns:IServicioOperador_Operadores_Asignaciones_lst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Persona_lst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Persona_lst" message="tns:IServicioOperador_Operadores_Persona_lst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Operadores_Persona_lstResponse" message="tns:IServicioOperador_Operadores_Persona_lst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Nombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Nombre" message="tns:IServicioOperador_Nombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/NombreResponse" message="tns:IServicioOperador_Nombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logins_rpt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Logins_rpt" message="tns:IServicioOperador_Logins_rpt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Logins_rptResponse" message="tns:IServicioOperador_Logins_rpt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Salir">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Salir" message="tns:IServicioOperador_Salir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/SalirResponse" message="tns:IServicioOperador_Salir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Compromisos_rpt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/Compromisos_rpt" message="tns:IServicioOperador_Compromisos_rpt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/Compromisos_rptResponse" message="tns:IServicioOperador_Compromisos_rpt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarOperadoresSUpervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioOperador/ListarOperadoresSUpervisor" message="tns:IServicioOperador_ListarOperadoresSUpervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioOperador/ListarOperadoresSUpervisorResponse" message="tns:IServicioOperador_ListarOperadoresSUpervisor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioOperador" type="tns:IServicioOperador">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Operadores_lst">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_lst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Suplantar_lst">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_Suplantar_lst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Suplantarme_lst">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_Suplantarme_lst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_sel">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_sel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_del">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_del" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_sav">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_sav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operador_Metas">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operador_Metas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DistribucionOperadores_Ejecutar">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/DistribucionOperadores_Ejecutar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Asignaciones_lst">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_Asignaciones_lst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operadores_Persona_lst">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Operadores_Persona_lst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nombre">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Nombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins_rpt">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Logins_rpt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salir">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Salir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Compromisos_rpt">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/Compromisos_rpt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarOperadoresSUpervisor">
+      <soap:operation soapAction="http://tempuri.org/IServicioOperador/ListarOperadoresSUpervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioOperador">
+    <wsdl:port name="BasicHttpBinding_IServicioOperador" binding="tns:BasicHttpBinding_IServicioOperador">
+      <soap:address location="http://localhost:8990/Servicios/ServicioOperador.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

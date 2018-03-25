@@ -1,0 +1,1706 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cobranzas" Class="CobranzasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=usmiavs006;Initial Catalog=Cobranzas;Integrated Security=True" SettingsObjectName="Entidades.Properties.Settings" SettingsPropertyName="CobranzasConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[_Encuestas]" Member="_Encuestas">
+    <Type Name="_Encuestas">
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BancosPropios" Member="BancosPropios">
+    <Type Name="BancosPropios">
+      <Column Name="idBancoPropio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBanco" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NroCuenta" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCuenta" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciasRegExp" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ReferenciasInfo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="BancosPropios_Pagos" Member="Pagos" ThisKey="idBancoPropio" OtherKey="idBancoPropio" Type="Pagos" />
+      <Association Name="Bancos_BancosPropios" Member="Bancos" ThisKey="idBanco" OtherKey="idBanco" Type="Bancos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[_tempCuentas]" Member="_tempCuentas">
+    <Type Name="_tempCuentas">
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NroCuenta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoCuenta" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ReferenciaRegExp" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciasInfo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[_tmpRutas]" Member="_tmpRutas">
+    <Type Name="_tmpRutas">
+      <Column Name="codigo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(157)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[_tmpSoportes]" Member="_tmpSoportes">
+    <Type Name="_tmpSoportes">
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(401) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[_tmpSoportes2]" Member="_tmpSoportes2">
+    <Type Name="_tmpSoportes2">
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="idPais" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(24)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(205)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Acciones" Member="Acciones">
+    <Type Name="Acciones">
+      <Column Name="idAccion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Accion" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Association Name="Operadores_Acciones" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Avisos" Member="Avisos">
+    <Type Name="Avisos">
+      <Column Name="idAviso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorCrea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Aviso" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaOriginal" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VecesMostrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAviso" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCancelado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Prioritario" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Operadores_Avisos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Avisos1" Member="Operadores1" ThisKey="idOperadorCrea" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_Avisos" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bancos" Member="Bancos">
+    <Type Name="Bancos">
+      <Column Name="idBanco" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Bancos_BancosPropios" Member="BancosPropios" ThisKey="idBanco" OtherKey="idBanco" Type="BancosPropios" />
+      <Association Name="Bancos_Pagos" Member="Pagos" ThisKey="idBanco" OtherKey="idBancoOrigen" Type="Pagos" />
+      <Association Name="Bancos_PagosDet" Member="PagosDet" ThisKey="idBanco" OtherKey="idBanco" Type="PagosDet" />
+      <Association Name="Paises_Bancos" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campanas" Member="Campanas">
+    <Type Name="Campanas">
+      <Column Name="idCampana" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEstimadaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idModoDistOperadores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="idReglaCreacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MontoMeta" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorDueno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Peso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCampana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idReglaSalida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Campanas_Campanas_Cuentas" Member="Campanas_Cuentas" ThisKey="idCampana" OtherKey="idCampana" Type="Campanas_Cuentas" />
+      <Association Name="Campanas_Campanas_Operadores" Member="Campanas_Operadores" ThisKey="idCampana" OtherKey="idCampana" Type="Campanas_Operadores" />
+      <Association Name="Campanas_DistribucionCampanas" Member="DistribucionCampanas" ThisKey="idCampana" OtherKey="idCampana" Type="DistribucionCampanas" />
+      <Association Name="Flujos_Pasos_Campanas" Member="Flujos_Pasos" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Flujos_Pasos" IsForeignKey="true" />
+      <Association Name="ModoDistOperadores_Campanas" Member="ModoDistOperadores" ThisKey="idModoDistOperadores" OtherKey="idModoDistOperadores" Type="ModoDistOperadores" IsForeignKey="true" />
+      <Association Name="Operadores_Campanas" Member="Operadores" ThisKey="idOperadorDueno" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Reglas_Campanas" Member="Reglas" ThisKey="idReglaCreacion" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+      <Association Name="Reglas_Campanas1" Member="Reglas1" ThisKey="idReglaSalida" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CuentasDet" Member="CuentasDet">
+    <Type Name="CuentasDet">
+      <Column Name="idCuentaDet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Detalle" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Cuentas_CuentasDet" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campanas_Cuentas" Member="Campanas_Cuentas">
+    <Type Name="Campanas_Cuentas">
+      <Column Name="idCampana" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Campanas_Campanas_Cuentas" Member="Campanas" ThisKey="idCampana" OtherKey="idCampana" Type="Campanas" IsForeignKey="true" />
+      <Association Name="Cuentas_Campanas_Cuentas" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campanas_Operadores" Member="Campanas_Operadores">
+    <Type Name="Campanas_Operadores">
+      <Column Name="idCampana" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Campanas_Campanas_Operadores" Member="Campanas" ThisKey="idCampana" OtherKey="idCampana" Type="Campanas" IsForeignKey="true" />
+      <Association Name="Operadores_Campanas_Operadores" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campos" Member="Campos">
+    <Type Name="Campos">
+      <Column Name="idCampo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoCampo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Definicion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoSeleccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Campos_ReglasDet" Member="ReglasDet" ThisKey="idCampo" OtherKey="idCampo" Type="ReglasDet" />
+      <Association Name="TiposCampo_Campos" Member="TiposCampo" ThisKey="idTipoCampo" OtherKey="idTipoCampo" Type="TiposCampo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CentralesIp" Member="CentralesIp">
+    <Type Name="CentralesIp">
+      <Column Name="idCentralIp" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Host" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Port" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PrefijoSalida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoPais" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArea" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ConnectionString" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FTP" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UsuarioFTP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PasswordFTP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="CentralesIp_Oficinas" Member="Oficinas" ThisKey="idCentralIp" OtherKey="idCentralIp" Type="Oficinas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clientes" Member="Clientes">
+    <Type Name="Clientes">
+      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Rif" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DireccionFiscal" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NotaEspecial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Clientes_Cuentas" Member="Cuentas" ThisKey="idCliente" OtherKey="idCliente" Type="Cuentas" />
+      <Association Name="Clientes_Productos_Clientes" Member="Productos_Clientes" ThisKey="idCliente" OtherKey="idCliente" Type="Productos_Clientes" />
+      <Association Name="Clientes_PersonasContacto" Member="PersonasContacto" ThisKey="idCliente" OtherKey="idCliente" Type="PersonasContacto" />
+      <Association Name="Clientes_PersonasObservaciones" Member="PersonasObservaciones" ThisKey="idCliente" OtherKey="idCliente" Type="PersonasObservaciones" />
+      <Association Name="Paises_Clientes" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposCliente_Clientes" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Colas" Member="Colas">
+    <Type Name="Colas">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compromisos" Member="Compromisos">
+    <Type Name="Compromisos">
+      <Column Name="idCompromiso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Compromisos_Compromisos_Cuentas" Member="Compromisos_Cuentas" ThisKey="idCompromiso" OtherKey="idCompromiso" Type="Compromisos_Cuentas" />
+      <Association Name="Operadores_Compromisos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_Compromisos" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compromisos_Cuentas" Member="Compromisos_Cuentas">
+    <Type Name="Compromisos_Cuentas">
+      <Column Name="idCompromiso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Association Name="Compromisos_Compromisos_Cuentas" Member="Compromisos" ThisKey="idCompromiso" OtherKey="idCompromiso" Type="Compromisos" IsForeignKey="true" />
+      <Association Name="Cuentas_Compromisos_Cuentas" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Consulta" Member="Consulta">
+    <Type Name="Consulta">
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NroCuenta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoCuenta" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ReferenciaRegExp" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciasInfo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Correos" Member="Correos">
+    <Type Name="Correos">
+      <Column Name="idCorreo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Asunto" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Destinatarios" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="DestinatariosCopia" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="DestinatariosCopiaOculta" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Remitente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Consulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ResultadosAdjuntos" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Adjuntos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RutaEml" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="IdPop3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Leido" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TipoEspecial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Enviando" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Enviado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Errores" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Correos_Correos_Personas" Member="Correos_Personas" ThisKey="idCorreo" OtherKey="idCorreo" Type="Correos_Personas" />
+      <Association Name="Correos_CorreosAdjuntos" Member="CorreosAdjuntos" ThisKey="idCorreo" OtherKey="idCorreo" Type="CorreosAdjuntos" />
+      <Association Name="Correos_CorreosHist" Member="CorreosHist" ThisKey="idCorreo" OtherKey="idCorreo" Type="CorreosHist" />
+      <Association Name="Operadores_Correos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Correos_Personas" Member="Correos_Personas">
+    <Type Name="Correos_Personas">
+      <Column Name="idCorreo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaAsignado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Correos_Correos_Personas" Member="Correos" ThisKey="idCorreo" OtherKey="idCorreo" Type="Correos" IsForeignKey="true" />
+      <Association Name="Personas_Correos_Personas" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CorreosAdjuntos" Member="CorreosAdjuntos">
+    <Type Name="CorreosAdjuntos">
+      <Column Name="idAdjunto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCorreo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="Correos_CorreosAdjuntos" Member="Correos" ThisKey="idCorreo" OtherKey="idCorreo" Type="Correos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CorreosFiltros" Member="CorreosFiltros">
+    <Type Name="CorreosFiltros">
+      <Column Name="idCorreoFiltro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="De" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Operadores_CorreosFiltros" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_CorreosFiltros" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CorreosHist" Member="CorreosHist">
+    <Type Name="CorreosHist">
+      <Column Name="idCorreo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCorreoHist" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Correos_CorreosHist" Member="Correos" ThisKey="idCorreo" OtherKey="idCorreo" Type="Correos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuentas" Member="Cuentas">
+    <Type Name="Cuentas">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoRestante" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CambioDolar" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="CambioLocal" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnReclamo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Anulada" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MontoBase" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="MontoIva" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Association Name="Cuentas_CuentasDet" Member="CuentasDet" ThisKey="idCuenta" OtherKey="idCuenta" Type="CuentasDet" />
+      <Association Name="Cuentas_Campanas_Cuentas" Member="Campanas_Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Campanas_Cuentas" />
+      <Association Name="Cuentas_Compromisos_Cuentas" Member="Compromisos_Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Compromisos_Cuentas" />
+      <Association Name="Cuentas_Cuentas_Gestiones" Member="Cuentas_Gestiones" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas_Gestiones" />
+      <Association Name="Cuentas_Cuentas_Operadores" Member="Cuentas_Operadores" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas_Operadores" />
+      <Association Name="Cuentas_Cuentas_Reclamos" Member="Cuentas_Reclamos" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas_Reclamos" />
+      <Association Name="Cuentas_Exclusiones" Member="Exclusiones" ThisKey="idCuenta" OtherKey="idCuenta" Type="Exclusiones" />
+      <Association Name="Cuentas_Movimientos" Member="Movimientos" ThisKey="idCuenta" OtherKey="idCuenta" Type="Movimientos" />
+      <Association Name="Cuentas_Metas_Operadores_Cuentas" Member="Metas_Operadores_Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Metas_Operadores_Cuentas" />
+      <Association Name="Cuentas_Pagos_Cuentas" Member="Pagos_Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Pagos_Cuentas" />
+      <Association Name="Cuentas_Reportes" Member="Reportes" ThisKey="idCuenta" OtherKey="idCuenta" Type="Reportes" />
+      <Association Name="Cuentas_Soportes" Member="Soportes" ThisKey="idCuenta" OtherKey="idCuenta" Type="Soportes" />
+      <Association Name="Clientes_Cuentas" Member="Clientes" ThisKey="idCliente" OtherKey="idCliente" Type="Clientes" IsForeignKey="true" />
+      <Association Name="Flujos_Pasos_Cuentas" Member="Flujos_Pasos" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Flujos_Pasos" IsForeignKey="true" />
+      <Association Name="Monedas_Cuentas" Member="Monedas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Monedas" IsForeignKey="true" />
+      <Association Name="Origenes_Cuentas" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Personas_Cuentas" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="Productos_Cuentas" Member="Productos" ThisKey="idProducto" OtherKey="idProducto" Type="Productos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuentas_Gestiones" Member="Cuentas_Gestiones">
+    <Type Name="Cuentas_Gestiones">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idGestion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Cuentas_Cuentas_Gestiones" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Gestiones_Cuentas_Gestiones" Member="Gestiones" ThisKey="idGestion" OtherKey="idGestion" Type="Gestiones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuentas_Operadores" Member="Cuentas_Operadores">
+    <Type Name="Cuentas_Operadores">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Cuentas_Cuentas_Operadores" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Operadores_Cuentas_Operadores" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuentas_Reclamos" Member="Cuentas_Reclamos">
+    <Type Name="Cuentas_Reclamos">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idReclamo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idReclamoSolucion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cuentas_Cuentas_Reclamos" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Reclamos_Cuentas_Reclamos" Member="Reclamos" ThisKey="idReclamo" OtherKey="idReclamo" Type="Reclamos" IsForeignKey="true" />
+      <Association Name="ReclamosSoluciones_Cuentas_Reclamos" Member="ReclamosSoluciones" ThisKey="idReclamoSolucion" OtherKey="idReclamoSolucion" Type="ReclamosSoluciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DistribucionCampanas" Member="DistribucionCampanas">
+    <Type Name="DistribucionCampanas">
+      <Column Name="idDistribucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Excluir" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="idRegla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCampana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorDueno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Campanas_DistribucionCampanas" Member="Campanas" ThisKey="idCampana" OtherKey="idCampana" Type="Campanas" IsForeignKey="true" />
+      <Association Name="Flujos_Pasos_DistribucionCampanas" Member="Flujos_Pasos" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Flujos_Pasos" IsForeignKey="true" />
+      <Association Name="Operadores_DistribucionCampanas" Member="Operadores" ThisKey="idOperadorDueno" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Reglas_DistribucionCampanas" Member="Reglas" ThisKey="idRegla" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DistribucionOperador" Member="DistribucionOperador">
+    <Type Name="DistribucionOperador">
+      <Column Name="idDistribucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorDueno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Flujos_Pasos_DistribucionOperador" Member="Flujos_Pasos" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Flujos_Pasos" IsForeignKey="true" />
+      <Association Name="Operadores_DistribucionOperador" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Reglas_DistribucionOperador" Member="Reglas" ThisKey="idRegla" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Errores" Member="Errores">
+    <Type Name="Errores">
+      <Column Name="idError" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Error" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExclusionesMotivos" Member="ExclusionesMotivos">
+    <Type Name="ExclusionesMotivos">
+      <Column Name="idExclusionMotivo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ExclusionesMotivos_Exclusiones" Member="Exclusiones" ThisKey="idExclusionMotivo" OtherKey="idExclusionMotivo" Type="Exclusiones" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Exclusiones" Member="Exclusiones">
+    <Type Name="Exclusiones">
+      <Column Name="idExclusion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idExclusionMotivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorInc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAprobacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idOperadorApr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idOperadorExc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cuentas_Exclusiones" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="ExclusionesMotivos_Exclusiones" Member="ExclusionesMotivos" ThisKey="idExclusionMotivo" OtherKey="idExclusionMotivo" Type="ExclusionesMotivos" IsForeignKey="true" />
+      <Association Name="Operadores_Exclusiones" Member="Operadores" ThisKey="idOperadorInc" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Exclusiones1" Member="Operadores1" ThisKey="idOperadorApr" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Exclusiones2" Member="Operadores2" ThisKey="idOperadorExc" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_Exclusiones" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FlujoAvance" Member="FlujoAvance">
+    <Type Name="FlujoAvance">
+      <Column Name="idFlujoAvance" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPasoInicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPasoFinal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Flujos_FlujoAvance" Member="Flujos" ThisKey="idFlujo" OtherKey="idFlujo" Type="Flujos" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Pasos_FlujoAvance" Member="Pasos" ThisKey="idPasoFinal" OtherKey="idPaso" Type="Pasos" IsForeignKey="true" />
+      <Association Name="Pasos_FlujoAvance1" Member="Pasos1" ThisKey="idPasoInicio" OtherKey="idPaso" Type="Pasos" IsForeignKey="true" />
+      <Association Name="Reglas_FlujoAvance" Member="Reglas" ThisKey="idRegla" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movimientos" Member="Movimientos">
+    <Type Name="Movimientos">
+      <Column Name="idMovimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idTipoMovimiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Cuentas_Movimientos" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="TiposMovimiento_Movimientos" Member="TiposMovimiento" ThisKey="idTipoMovimiento" OtherKey="idTipoMovimiento" Type="TiposMovimiento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flujos" Member="Flujos">
+    <Type Name="Flujos">
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idReglaSalida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperadorDueno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesactivarAlSalir" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Flujos_FlujoAvance" Member="FlujoAvance" ThisKey="idFlujo" OtherKey="idFlujo" Type="FlujoAvance" />
+      <Association Name="Flujos_Flujos_Pasos" Member="Flujos_Pasos" ThisKey="idFlujo" OtherKey="idFlujo" Type="Flujos_Pasos" />
+      <Association Name="Reglas_Flujos" Member="Reglas" ThisKey="idReglaSalida" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+      <Association Name="TiposCliente_Flujos" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flujos_Pasos" Member="Flujos_Pasos">
+    <Type Name="Flujos_Pasos">
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posicion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Flujos_Pasos_Campanas" Member="Campanas" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Campanas" />
+      <Association Name="Flujos_Pasos_Cuentas" Member="Cuentas" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Cuentas" />
+      <Association Name="Flujos_Pasos_DistribucionCampanas" Member="DistribucionCampanas" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="DistribucionCampanas" />
+      <Association Name="Flujos_Pasos_DistribucionOperador" Member="DistribucionOperador" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="DistribucionOperador" />
+      <Association Name="Flujos_Pasos_Operadores" Member="Operadores" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Operadores" />
+      <Association Name="Flujos_Flujos_Pasos" Member="Flujos" ThisKey="idFlujo" OtherKey="idFlujo" Type="Flujos" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Pasos_Flujos_Pasos" Member="Pasos" ThisKey="idPaso" OtherKey="idPaso" Type="Pasos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gestiones" Member="Gestiones">
+    <Type Name="Gestiones">
+      <Column Name="idGestion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Gestiones_Cuentas_Gestiones" Member="Cuentas_Gestiones" ThisKey="idGestion" OtherKey="idGestion" Type="Cuentas_Gestiones" />
+      <Association Name="Operadores_Gestiones" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_Gestiones" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="Status_Gestiones" Member="Status" ThisKey="idStatus" OtherKey="idStatus" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GestionesViejas" Member="GestionesViejas">
+    <Type Name="GestionesViejas">
+      <Column Name="CodigoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupos" Member="Grupos">
+    <Type Name="Grupos">
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Grupos_Grupos_Permisos" Member="Grupos_Permisos" ThisKey="idGrupo" OtherKey="idGrupo" Type="Grupos_Permisos" />
+      <Association Name="Grupos_Operadores" Member="Operadores" ThisKey="idGrupo" OtherKey="idGrupo" Type="Operadores" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupos_Permisos" Member="Grupos_Permisos">
+    <Type Name="Grupos_Permisos">
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPermiso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Valor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Grupos_Grupos_Permisos" Member="Grupos" ThisKey="idGrupo" OtherKey="idGrupo" Type="Grupos" IsForeignKey="true" />
+      <Association Name="Permisos_Grupos_Permisos" Member="Permisos" ThisKey="idPermiso" OtherKey="idPermiso" Type="Permisos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Llamadas" Member="Llamadas">
+    <Type Name="Llamadas">
+      <Column Name="idLlamada" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idTelefono" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusPrimario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Duracion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DuracionEfectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Grabacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Operadores_Llamadas" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Telefonos_Llamadas" Member="Telefonos" ThisKey="idTelefono" OtherKey="idTelefono" Type="Telefonos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Logs" Member="Logs">
+    <Type Name="Logs">
+      <Column Name="idLog" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TipoProceso" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idProceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Indice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Metas" Member="Metas">
+    <Type Name="Metas">
+      <Column Name="idMeta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idRegla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Frecuencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idOperadorDueno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaMetaActual" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaMetaSiguiente" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AplicaExclusiones" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Metas_Metas_Operadores" Member="Metas_Operadores" ThisKey="idMeta" OtherKey="idMeta" Type="Metas_Operadores" />
+      <Association Name="Metas_Metas_Operadores_Cuentas" Member="Metas_Operadores_Cuentas" ThisKey="idMeta" OtherKey="idMeta" Type="Metas_Operadores_Cuentas" />
+      <Association Name="Operadores_Metas" Member="Operadores" ThisKey="idOperadorDueno" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Reglas_Metas" Member="Reglas" ThisKey="idRegla" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Metas_Operadores" Member="Metas_Operadores">
+    <Type Name="Metas_Operadores">
+      <Column Name="idMeta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ajuste" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Association Name="Metas_Metas_Operadores" Member="Metas" ThisKey="idMeta" OtherKey="idMeta" Type="Metas" IsForeignKey="true" />
+      <Association Name="Operadores_Metas_Operadores" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Metas_Operadores_Cuentas" Member="Metas_Operadores_Cuentas">
+    <Type Name="Metas_Operadores_Cuentas">
+      <Column Name="idMOC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMeta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="InclusionManual" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Meta" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Finalizado" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Association Name="Cuentas_Metas_Operadores_Cuentas" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Metas_Metas_Operadores_Cuentas" Member="Metas" ThisKey="idMeta" OtherKey="idMeta" Type="Metas" IsForeignKey="true" />
+      <Association Name="Operadores_Metas_Operadores_Cuentas" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModoDistOperadores" Member="ModoDistOperadores">
+    <Type Name="ModoDistOperadores">
+      <Column Name="idModoDistOperadores" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ModoDistOperadores_Campanas" Member="Campanas" ThisKey="idModoDistOperadores" OtherKey="idModoDistOperadores" Type="Campanas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Monedas" Member="Monedas">
+    <Type Name="Monedas">
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Simbolo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Monedas_Cuentas" Member="Cuentas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Cuentas" />
+      <Association Name="Monedas_Pagos" Member="Pagos" ThisKey="idMoneda" OtherKey="idMoneda" Type="Pagos" />
+      <Association Name="Monedas_Paises" Member="Paises" ThisKey="idMoneda" OtherKey="idMoneda" Type="Paises" />
+      <Association Name="Monedas_Paises_Monedas" Member="Paises_Monedas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Paises_Monedas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Oficinas" Member="Oficinas">
+    <Type Name="Oficinas">
+      <Column Name="idOficina" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefonos" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idCentralIp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Oficinas_Operadores" Member="Operadores" ThisKey="idOficina" OtherKey="idOficina" Type="Operadores" />
+      <Association Name="CentralesIp_Oficinas" Member="CentralesIp" ThisKey="idCentralIp" OtherKey="idCentralIp" Type="CentralesIp" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Origenes" Member="Origenes">
+    <Type Name="Origenes">
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ConnectionString" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaRevision" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Origenes_Cuentas" Member="Cuentas" ThisKey="idOrigen" OtherKey="idOrigen" Type="Cuentas" />
+      <Association Name="Origenes_PersonasObservaciones" Member="PersonasObservaciones" ThisKey="idOrigen" OtherKey="idOrigen" Type="PersonasObservaciones" />
+      <Association Name="Origenes_Reclamos" Member="Reclamos" ThisKey="idOrigen" OtherKey="idOrigen" Type="Reclamos" />
+      <Association Name="Origenes_ReclamosDepartamentos" Member="ReclamosDepartamentos" ThisKey="idOrigen" OtherKey="idOrigen" Type="ReclamosDepartamentos" />
+      <Association Name="Origenes_ReclamosMotivos" Member="ReclamosMotivos" ThisKey="idOrigen" OtherKey="idOrigen" Type="ReclamosMotivos" />
+      <Association Name="Origenes_ReclamosSoluciones" Member="ReclamosSoluciones" ThisKey="idOrigen" OtherKey="idOrigen" Type="ReclamosSoluciones" />
+      <Association Name="Origenes_ReclamosStatus" Member="ReclamosStatus" ThisKey="idOrigen" OtherKey="idOrigen" Type="ReclamosStatus" />
+      <Association Name="Origenes_TiposReporte" Member="TiposReporte" ThisKey="idOrigen" OtherKey="idOrigen" Type="TiposReporte" />
+      <Association Name="Origenes_StatusPago" Member="StatusPago" ThisKey="idOrigen" OtherKey="idOrigen" Type="StatusPago" />
+      <Association Name="Origenes_TiposObservaciones" Member="TiposObservaciones" ThisKey="idOrigen" OtherKey="idOrigen" Type="TiposObservaciones" />
+      <Association Name="TiposCliente_Origenes" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operadores" Member="Operadores">
+    <Type Name="Operadores">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="Char(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idClon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSupervisor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idReglaRestriccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMTPHost" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SMTPPort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMTPSSL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SMTPLogin" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMTPPassword" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="POP3Host" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POP3Port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POP3SSL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POP3Login" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="POP3Password" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UltimaFechaCorreoEntrante" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FirmaCorreo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AgenteCentral" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idOficina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefonos" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Operadores_Acciones" Member="Acciones" ThisKey="idOperador" OtherKey="idOperador" Type="Acciones" />
+      <Association Name="Operadores_Avisos" Member="Avisos" ThisKey="idOperador" OtherKey="idOperador" Type="Avisos" />
+      <Association Name="Operadores_Avisos1" Member="Avisos1" ThisKey="idOperador" OtherKey="idOperadorCrea" Type="Avisos" />
+      <Association Name="Operadores_Campanas" Member="Campanas" ThisKey="idOperador" OtherKey="idOperadorDueno" Type="Campanas" />
+      <Association Name="Operadores_Campanas_Operadores" Member="Campanas_Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Campanas_Operadores" />
+      <Association Name="Operadores_Compromisos" Member="Compromisos" ThisKey="idOperador" OtherKey="idOperador" Type="Compromisos" />
+      <Association Name="Operadores_Correos" Member="Correos" ThisKey="idOperador" OtherKey="idOperador" Type="Correos" />
+      <Association Name="Operadores_CorreosFiltros" Member="CorreosFiltros" ThisKey="idOperador" OtherKey="idOperador" Type="CorreosFiltros" />
+      <Association Name="Operadores_Cuentas_Operadores" Member="Cuentas_Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Cuentas_Operadores" />
+      <Association Name="Operadores_DistribucionCampanas" Member="DistribucionCampanas" ThisKey="idOperador" OtherKey="idOperadorDueno" Type="DistribucionCampanas" />
+      <Association Name="Operadores_DistribucionOperador" Member="DistribucionOperador" ThisKey="idOperador" OtherKey="idOperador" Type="DistribucionOperador" />
+      <Association Name="Operadores_Exclusiones" Member="Exclusiones" ThisKey="idOperador" OtherKey="idOperadorInc" Type="Exclusiones" />
+      <Association Name="Operadores_Exclusiones1" Member="Exclusiones1" ThisKey="idOperador" OtherKey="idOperadorApr" Type="Exclusiones" />
+      <Association Name="Operadores_Exclusiones2" Member="Exclusiones2" ThisKey="idOperador" OtherKey="idOperadorExc" Type="Exclusiones" />
+      <Association Name="Operadores_Gestiones" Member="Gestiones" ThisKey="idOperador" OtherKey="idOperador" Type="Gestiones" />
+      <Association Name="Operadores_Llamadas" Member="Llamadas" ThisKey="idOperador" OtherKey="idOperador" Type="Llamadas" />
+      <Association Name="Operadores_Metas" Member="Metas" ThisKey="idOperador" OtherKey="idOperadorDueno" Type="Metas" />
+      <Association Name="Operadores_Metas_Operadores" Member="Metas_Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Metas_Operadores" />
+      <Association Name="Operadores_Metas_Operadores_Cuentas" Member="Metas_Operadores_Cuentas" ThisKey="idOperador" OtherKey="idOperador" Type="Metas_Operadores_Cuentas" />
+      <Association Name="Operadores_Operadores" Member="Operadores2" ThisKey="idOperador" OtherKey="idSupervisor" Type="Operadores" />
+      <Association Name="Operadores_Operadores1" Member="Operadores4" ThisKey="idOperador" OtherKey="idClon" Type="Operadores" />
+      <Association Name="Operadores_Operadores_Asignaciones" Member="Operadores_Asignaciones" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores_Asignaciones" />
+      <Association Name="Operadores_Operadores_Permisos" Member="Operadores_Permisos" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores_Permisos" />
+      <Association Name="Operadores_OperadoresMetas" Member="OperadoresMetas" ThisKey="idOperador" OtherKey="idOperador" Type="OperadoresMetas" />
+      <Association Name="Operadores_Pagos" Member="Pagos" ThisKey="idOperador" OtherKey="idOperador" Type="Pagos" />
+      <Association Name="Operadores_Pagos1" Member="Pagos1" ThisKey="idOperador" OtherKey="idOperadorAprobado" Type="Pagos" />
+      <Association Name="Operadores_Pagos2" Member="Pagos2" ThisKey="idOperador" OtherKey="idOperadorCrea" Type="Pagos" />
+      <Association Name="Operadores_Pagos_Cuentas" Member="Pagos_Cuentas" ThisKey="idOperador" OtherKey="idOperador" Type="Pagos_Cuentas" />
+      <Association Name="Operadores_Plantillas" Member="Plantillas" ThisKey="idOperador" OtherKey="idOperador" Type="Plantillas" />
+      <Association Name="Operadores_Reclamos" Member="Reclamos" ThisKey="idOperador" OtherKey="idOperador" Type="Reclamos" />
+      <Association Name="Operadores_Suplentes" Member="Suplentes" ThisKey="idOperador" OtherKey="idOperador" Type="Suplentes" />
+      <Association Name="Operadores_Suplentes1" Member="Suplentes1" ThisKey="idOperador" OtherKey="idOperadorSuplente" Type="Suplentes" />
+      <Association Name="Operadores_Telefonos" Member="Telefonos1" ThisKey="idOperador" OtherKey="idOperador" Type="Telefonos" />
+      <Association Name="Operadores_Telefonos1" Member="Telefonos2" ThisKey="idOperador" OtherKey="idOperadorConfirmado" Type="Telefonos" />
+      <Association Name="Operadores_Telefonos2" Member="Telefonos3" ThisKey="idOperador" OtherKey="idOperadorConfirmadoEliminar" Type="Telefonos" />
+      <Association Name="Operadores_Telefonos3" Member="Telefonos4" ThisKey="idOperador" OtherKey="idOperadorEliminar" Type="Telefonos" />
+      <Association Name="Flujos_Pasos_Operadores" Member="Flujos_Pasos" ThisKey="idFlujo,idPaso" OtherKey="idFlujo,idPaso" Type="Flujos_Pasos" IsForeignKey="true" />
+      <Association Name="Grupos_Operadores" Member="Grupos" ThisKey="idGrupo" OtherKey="idGrupo" Type="Grupos" IsForeignKey="true" />
+      <Association Name="Oficinas_Operadores" Member="Oficinas" ThisKey="idOficina" OtherKey="idOficina" Type="Oficinas" IsForeignKey="true" />
+      <Association Name="Operadores_Operadores" Member="Operadores1" ThisKey="idSupervisor" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Operadores1" Member="Operadores3" ThisKey="idClon" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Reglas_Operadores" Member="Reglas" ThisKey="idReglaRestriccion" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operadores_Asignaciones" Member="Operadores_Asignaciones">
+    <Type Name="Operadores_Asignaciones">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Operadores_Operadores_Asignaciones" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Paises_Operadores_Asignaciones" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposCliente_Operadores_Asignaciones" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operadores_Permisos" Member="Operadores_Permisos">
+    <Type Name="Operadores_Permisos">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPermiso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Valor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Usos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Operadores_Operadores_Permisos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Permisos_Operadores_Permisos" Member="Permisos" ThisKey="idPermiso" OtherKey="idPermiso" Type="Permisos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OperadoresMetas" Member="OperadoresMetas">
+    <Type Name="OperadoresMetas">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaGestiones" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetaGestionesPersonas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetaMonto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTiempo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTiempoInactivo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTMO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RealGestiones" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RealGestionesPersonas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RealMonto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RealTiempo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RealTiempoInactivo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RealTMO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Operadores_OperadoresMetas" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pagos" Member="Pagos">
+    <Type Name="Pagos">
+      <Column Name="idPago" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idBancoOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idBancoPropio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Referencia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoEfectivo" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoCheque" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoTotal" Type="System.Decimal" DbType="Decimal(21,4)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorCrea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaAprobado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaResultado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idOperadorAprobado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resultado" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Confirmado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Aprobado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idStatusPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Pagos_Pagos_Cuentas" Member="Pagos_Cuentas" ThisKey="idPago" OtherKey="idPago" Type="Pagos_Cuentas" />
+      <Association Name="Pagos_PagosDet" Member="PagosDet" ThisKey="idPago" OtherKey="idPago" Type="PagosDet" />
+      <Association Name="Bancos_Pagos" Member="Bancos" ThisKey="idBancoOrigen" OtherKey="idBanco" Type="Bancos" IsForeignKey="true" />
+      <Association Name="BancosPropios_Pagos" Member="BancosPropios" ThisKey="idBancoPropio" OtherKey="idBancoPropio" Type="BancosPropios" IsForeignKey="true" />
+      <Association Name="Monedas_Pagos" Member="Monedas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Monedas" IsForeignKey="true" />
+      <Association Name="Operadores_Pagos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Pagos1" Member="Operadores1" ThisKey="idOperadorAprobado" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Pagos2" Member="Operadores2" ThisKey="idOperadorCrea" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Personas_Pagos" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="StatusPago_Pagos" Member="StatusPago" ThisKey="idStatusPago" OtherKey="idStatusPago" Type="StatusPago" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Productos_Clientes" Member="Productos_Clientes">
+    <Type Name="Productos_Clientes">
+      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Clientes_Productos_Clientes" Member="Clientes" ThisKey="idCliente" OtherKey="idCliente" Type="Clientes" IsForeignKey="true" />
+      <Association Name="Productos_Productos_Clientes" Member="Productos" ThisKey="idProducto" OtherKey="idProducto" Type="Productos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pagos_Cuentas" Member="Pagos_Cuentas">
+    <Type Name="Pagos_Cuentas">
+      <Column Name="idPago" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Retencion1" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Retencion2" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Cuentas_Pagos_Cuentas" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Operadores_Pagos_Cuentas" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Pagos_Pagos_Cuentas" Member="Pagos" ThisKey="idPago" OtherKey="idPago" Type="Pagos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PagosDet" Member="PagosDet">
+    <Type Name="PagosDet">
+      <Column Name="idPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPagoDet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NroCheque" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idBanco" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Association Name="Bancos_PagosDet" Member="Bancos" ThisKey="idBanco" OtherKey="idBanco" Type="Bancos" IsForeignKey="true" />
+      <Association Name="Pagos_PagosDet" Member="Pagos" ThisKey="idPago" OtherKey="idPago" Type="Pagos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Paises" Member="Paises">
+    <Type Name="Paises">
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Iso3" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Iso2" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Cultura" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Paises_Bancos" Member="Bancos" ThisKey="idPais" OtherKey="idPais" Type="Bancos" />
+      <Association Name="Paises_Clientes" Member="Clientes" ThisKey="idPais" OtherKey="idPais" Type="Clientes" />
+      <Association Name="Paises_Operadores_Asignaciones" Member="Operadores_Asignaciones" ThisKey="idPais" OtherKey="idPais" Type="Operadores_Asignaciones" />
+      <Association Name="Paises_Paises_Monedas" Member="Paises_Monedas" ThisKey="idPais" OtherKey="idPais" Type="Paises_Monedas" />
+      <Association Name="Paises_Personas" Member="Personas" ThisKey="idPais" OtherKey="idPais" Type="Personas" />
+      <Association Name="Paises_Plantillas" Member="Plantillas" ThisKey="idPais" OtherKey="idPais" Type="Plantillas" />
+      <Association Name="Paises_Productos" Member="Productos" ThisKey="idPais" OtherKey="idPais" Type="Productos" />
+      <Association Name="Paises_Reclamos" Member="Reclamos" ThisKey="idPais" OtherKey="idPais" Type="Reclamos" />
+      <Association Name="Paises_ReclamosDepartamentos" Member="ReclamosDepartamentos" ThisKey="idPais" OtherKey="idPais" Type="ReclamosDepartamentos" />
+      <Association Name="Paises_ReclamosMotivos" Member="ReclamosMotivos" ThisKey="idPais" OtherKey="idPais" Type="ReclamosMotivos" />
+      <Association Name="Paises_ReclamosSoluciones" Member="ReclamosSoluciones" ThisKey="idPais" OtherKey="idPais" Type="ReclamosSoluciones" />
+      <Association Name="Paises_ReclamosStatus" Member="ReclamosStatus" ThisKey="idPais" OtherKey="idPais" Type="ReclamosStatus" />
+      <Association Name="Paises_TiposReporte" Member="TiposReporte" ThisKey="idPais" OtherKey="idPais" Type="TiposReporte" />
+      <Association Name="Paises_Status" Member="Status" ThisKey="idPais" OtherKey="idPais" Type="Status" />
+      <Association Name="Monedas_Paises" Member="Monedas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Monedas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Paises_Monedas" Member="Paises_Monedas">
+    <Type Name="Paises_Monedas">
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Monedas_Paises_Monedas" Member="Monedas" ThisKey="idMoneda" OtherKey="idMoneda" Type="Monedas" IsForeignKey="true" />
+      <Association Name="Paises_Paises_Monedas" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parametros" Member="Parametros">
+    <Type Name="Parametros">
+      <Column Name="Clave" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pasos" Member="Pasos">
+    <Type Name="Pasos">
+      <Column Name="idPaso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Pasos_FlujoAvance" Member="FlujoAvance" ThisKey="idPaso" OtherKey="idPasoFinal" Type="FlujoAvance" />
+      <Association Name="Pasos_FlujoAvance1" Member="FlujoAvance1" ThisKey="idPaso" OtherKey="idPasoInicio" Type="FlujoAvance" />
+      <Association Name="Pasos_Flujos_Pasos" Member="Flujos_Pasos" ThisKey="idPaso" OtherKey="idPaso" Type="Flujos_Pasos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permisos" Member="Permisos">
+    <Type Name="Permisos">
+      <Column Name="idPermiso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Permisos_Grupos_Permisos" Member="Grupos_Permisos" ThisKey="idPermiso" OtherKey="idPermiso" Type="Grupos_Permisos" />
+      <Association Name="Permisos_Operadores_Permisos" Member="Operadores_Permisos" ThisKey="idPermiso" OtherKey="idPermiso" Type="Operadores_Permisos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personas" Member="Personas">
+    <Type Name="Personas">
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Rif" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DireccionFiscal" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contacto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NotaEspecial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DireccionEntrega" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="EnviosAutomaticos" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Personas_Avisos" Member="Avisos" ThisKey="idPersona" OtherKey="idPersona" Type="Avisos" />
+      <Association Name="Personas_Compromisos" Member="Compromisos" ThisKey="idPersona" OtherKey="idPersona" Type="Compromisos" />
+      <Association Name="Personas_Correos_Personas" Member="Correos_Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Correos_Personas" />
+      <Association Name="Personas_CorreosFiltros" Member="CorreosFiltros" ThisKey="idPersona" OtherKey="idPersona" Type="CorreosFiltros" />
+      <Association Name="Personas_Cuentas" Member="Cuentas" ThisKey="idPersona" OtherKey="idPersona" Type="Cuentas" />
+      <Association Name="Personas_Exclusiones" Member="Exclusiones" ThisKey="idPersona" OtherKey="idPersona" Type="Exclusiones" />
+      <Association Name="Personas_Gestiones" Member="Gestiones" ThisKey="idPersona" OtherKey="idPersona" Type="Gestiones" />
+      <Association Name="Personas_Pagos" Member="Pagos" ThisKey="idPersona" OtherKey="idPersona" Type="Pagos" />
+      <Association Name="Personas_PersonasContacto" Member="PersonasContacto" ThisKey="idPersona" OtherKey="idPersona" Type="PersonasContacto" />
+      <Association Name="Personas_PersonasObservaciones" Member="PersonasObservaciones" ThisKey="idPersona" OtherKey="idPersona" Type="PersonasObservaciones" />
+      <Association Name="Personas_Reportes" Member="Reportes" ThisKey="idPersona" OtherKey="idPersona" Type="Reportes" />
+      <Association Name="Personas_Soportes" Member="Soportes" ThisKey="idPersona" OtherKey="idCliente" Type="Soportes" />
+      <Association Name="Personas_Telefonos" Member="Telefonos" ThisKey="idPersona" OtherKey="idPersona" Type="Telefonos" />
+      <Association Name="Paises_Personas" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposPersona_Personas" Member="TiposPersona" ThisKey="idTipoPersona" OtherKey="idTipoPersona" Type="TiposPersona" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonasContacto" Member="PersonasContacto">
+    <Type Name="PersonasContacto">
+      <Column Name="idPersonaContacto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PersonasContacto_Telefonos" Member="Telefonos" ThisKey="idPersonaContacto" OtherKey="idPersonaContacto" Type="Telefonos" />
+      <Association Name="Personas_PersonasContacto" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="Clientes_PersonasContacto" Member="Clientes" ThisKey="idCliente" OtherKey="idCliente" Type="Clientes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonasObservaciones" Member="PersonasObservaciones">
+    <Type Name="PersonasObservaciones">
+      <Column Name="idPersonaObservacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoObservacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Clientes_PersonasObservaciones" Member="Clientes" ThisKey="idCliente" OtherKey="idCliente" Type="Clientes" IsForeignKey="true" />
+      <Association Name="Origenes_PersonasObservaciones" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Personas_PersonasObservaciones" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="TiposObservaciones_PersonasObservaciones" Member="TiposObservaciones" ThisKey="idTipoObservacion" OtherKey="idTipoObservacion" Type="TiposObservaciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Plantillas" Member="Plantillas">
+    <Type Name="Plantillas">
+      <Column Name="idPlantilla" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Asunto" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="Mensaje" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Adjunto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Privado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinatariosCopia" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DestinatariosCopiaOculta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Operadores_Plantillas" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Paises_Plantillas" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposCliente_Plantillas" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Productos" Member="Productos">
+    <Type Name="Productos">
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Productos_Cuentas" Member="Cuentas" ThisKey="idProducto" OtherKey="idProducto" Type="Cuentas" />
+      <Association Name="Productos_Productos_Clientes" Member="Productos_Clientes" ThisKey="idProducto" OtherKey="idProducto" Type="Productos_Clientes" />
+      <Association Name="Paises_Productos" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reclamos" Member="Reclamos">
+    <Type Name="Reclamos">
+      <Column Name="idReclamo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="idReclamoMotivo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Creador" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Abierto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Procede" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StatusInterno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idDepartamento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resultado" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaResultado" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idReclamoStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Reclamos_Cuentas_Reclamos" Member="Cuentas_Reclamos" ThisKey="idReclamo" OtherKey="idReclamo" Type="Cuentas_Reclamos" />
+      <Association Name="Operadores_Reclamos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Origenes_Reclamos" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Paises_Reclamos" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="ReclamosDepartamentos_Reclamos" Member="ReclamosDepartamentos" ThisKey="idDepartamento" OtherKey="idDepartamento" Type="ReclamosDepartamentos" IsForeignKey="true" />
+      <Association Name="ReclamosMotivos_Reclamos" Member="ReclamosMotivos" ThisKey="idReclamoMotivo" OtherKey="idReclamoMotivo" Type="ReclamosMotivos" IsForeignKey="true" />
+      <Association Name="ReclamosStatus_Reclamos" Member="ReclamosStatus" ThisKey="idReclamoStatus" OtherKey="idReclamoStatus" Type="ReclamosStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rutas" Member="Rutas">
+    <Type Name="Rutas">
+      <Column Name="Documento" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(157)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReclamosDepartamentos" Member="ReclamosDepartamentos">
+    <Type Name="ReclamosDepartamentos">
+      <Column Name="idDepartamento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoDepartamento" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Departamento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Anulado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ReclamosDepartamentos_Reclamos" Member="Reclamos" ThisKey="idDepartamento" OtherKey="idDepartamento" Type="Reclamos" />
+      <Association Name="Origenes_ReclamosDepartamentos" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Paises_ReclamosDepartamentos" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReclamosMotivos" Member="ReclamosMotivos">
+    <Type Name="ReclamosMotivos">
+      <Column Name="idReclamoMotivo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="ReclamosMotivos_Reclamos" Member="Reclamos" ThisKey="idReclamoMotivo" OtherKey="idReclamoMotivo" Type="Reclamos" />
+      <Association Name="Origenes_ReclamosMotivos" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Paises_ReclamosMotivos" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReclamosSoluciones" Member="ReclamosSoluciones">
+    <Type Name="ReclamosSoluciones">
+      <Column Name="idReclamoSolucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="ReclamosSoluciones_Cuentas_Reclamos" Member="Cuentas_Reclamos" ThisKey="idReclamoSolucion" OtherKey="idReclamoSolucion" Type="Cuentas_Reclamos" />
+      <Association Name="Origenes_ReclamosSoluciones" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Paises_ReclamosSoluciones" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReclamosStatus" Member="ReclamosStatus">
+    <Type Name="ReclamosStatus">
+      <Column Name="idReclamoStatus" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ReclamosStatus_Reclamos" Member="Reclamos" ThisKey="idReclamoStatus" OtherKey="idReclamoStatus" Type="Reclamos" />
+      <Association Name="Paises_ReclamosStatus" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="Origenes_ReclamosStatus" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reglas" Member="Reglas">
+    <Type Name="Reglas">
+      <Column Name="idRegla" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipoRegla" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Criterios" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Reglas_Campanas" Member="Campanas" ThisKey="idRegla" OtherKey="idReglaCreacion" Type="Campanas" />
+      <Association Name="Reglas_Campanas1" Member="Campanas1" ThisKey="idRegla" OtherKey="idReglaSalida" Type="Campanas" />
+      <Association Name="Reglas_DistribucionCampanas" Member="DistribucionCampanas" ThisKey="idRegla" OtherKey="idRegla" Type="DistribucionCampanas" />
+      <Association Name="Reglas_DistribucionOperador" Member="DistribucionOperador" ThisKey="idRegla" OtherKey="idRegla" Type="DistribucionOperador" />
+      <Association Name="Reglas_FlujoAvance" Member="FlujoAvance" ThisKey="idRegla" OtherKey="idRegla" Type="FlujoAvance" />
+      <Association Name="Reglas_Flujos" Member="Flujos" ThisKey="idRegla" OtherKey="idReglaSalida" Type="Flujos" />
+      <Association Name="Reglas_Metas" Member="Metas" ThisKey="idRegla" OtherKey="idRegla" Type="Metas" />
+      <Association Name="Reglas_Operadores" Member="Operadores" ThisKey="idRegla" OtherKey="idReglaRestriccion" Type="Operadores" />
+      <Association Name="Reglas_ReglasDet" Member="ReglasDet" ThisKey="idRegla" OtherKey="idRegla" Type="ReglasDet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReglasDet" Member="ReglasDet">
+    <Type Name="ReglasDet">
+      <Column Name="idRegla" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCampo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="Campos_ReglasDet" Member="Campos" ThisKey="idCampo" OtherKey="idCampo" Type="Campos" IsForeignKey="true" />
+      <Association Name="Reglas_ReglasDet" Member="Reglas" ThisKey="idRegla" OtherKey="idRegla" Type="Reglas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reportes" Member="Reportes">
+    <Type Name="Reportes">
+      <Column Name="idReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reporte" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Cuentas_Reportes" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Personas_Reportes" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="TiposReporte_Reportes" Member="TiposReporte" ThisKey="idTipoReporte" OtherKey="idTipoReporte" Type="TiposReporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Soportes" Member="Soportes">
+    <Type Name="Soportes">
+      <Column Name="idSoporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoEspecial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tabla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idTabla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Personas_Soportes" Member="Personas" ThisKey="idCliente" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="Cuentas_Soportes" Member="Cuentas" ThisKey="idCuenta" OtherKey="idCuenta" Type="Cuentas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposReporte" Member="TiposReporte">
+    <Type Name="TiposReporte">
+      <Column Name="idTipoReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cuenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlVuelo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TiposReporte_Reportes" Member="Reportes" ThisKey="idTipoReporte" OtherKey="idTipoReporte" Type="Reportes" />
+      <Association Name="Origenes_TiposReporte" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+      <Association Name="Paises_TiposReporte" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposCliente_TiposReporte" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status" Member="Status">
+    <Type Name="Status">
+      <Column Name="idStatus" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Gestiones" Member="Gestiones" ThisKey="idStatus" OtherKey="idStatus" Type="Gestiones" />
+      <Association Name="Paises_Status" Member="Paises" ThisKey="idPais" OtherKey="idPais" Type="Paises" IsForeignKey="true" />
+      <Association Name="TiposCliente_Status" Member="TiposCliente" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusPago" Member="StatusPago">
+    <Type Name="StatusPago">
+      <Column Name="idStatusPago" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="StatusPago_Pagos" Member="Pagos" ThisKey="idStatusPago" OtherKey="idStatusPago" Type="Pagos" />
+      <Association Name="Origenes_StatusPago" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Suplencias" Member="Suplencias">
+    <Type Name="Suplencias">
+      <Column Name="idSuplencia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idSuplente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Actividad" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Suplentes_Suplencias" Member="Suplentes" ThisKey="idSuplente" OtherKey="idSuplente" Type="Suplentes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Suplentes" Member="Suplentes">
+    <Type Name="Suplentes">
+      <Column Name="idSuplente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperadorSuplente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Indicadores" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cartera" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Gestion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Supervision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Reportes" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Distribucion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Suplentes_Suplencias" Member="Suplencias" ThisKey="idSuplente" OtherKey="idSuplente" Type="Suplencias" />
+      <Association Name="Operadores_Suplentes" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Suplentes1" Member="Operadores1" ThisKey="idOperadorSuplente" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Telefonos" Member="Telefonos">
+    <Type Name="Telefonos">
+      <Column Name="idTelefono" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPersonaContacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodigoPais" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoArea" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Confirmado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConfirmadoEliminar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reputacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperadorConfirmado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperadorEliminar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOperadorConfirmadoEliminar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Importado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Telefonos_Llamadas" Member="Llamadas" ThisKey="idTelefono" OtherKey="idTelefono" Type="Llamadas" />
+      <Association Name="Personas_Telefonos" Member="Personas" ThisKey="idPersona" OtherKey="idPersona" Type="Personas" IsForeignKey="true" />
+      <Association Name="Operadores_Telefonos" Member="Operadores" ThisKey="idOperador" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Telefonos1" Member="Operadores1" ThisKey="idOperadorConfirmado" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Telefonos2" Member="Operadores2" ThisKey="idOperadorConfirmadoEliminar" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="Operadores_Telefonos3" Member="Operadores3" ThisKey="idOperadorEliminar" OtherKey="idOperador" Type="Operadores" IsForeignKey="true" />
+      <Association Name="PersonasContacto_Telefonos" Member="PersonasContacto" ThisKey="idPersonaContacto" OtherKey="idPersonaContacto" Type="PersonasContacto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TempMots" Member="TempMots">
+    <Type Name="TempMots">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pais" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposCampo" Member="TiposCampo">
+    <Type Name="TiposCampo">
+      <Column Name="idTipoCampo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="TiposCampo_Campos" Member="Campos" ThisKey="idTipoCampo" OtherKey="idTipoCampo" Type="Campos" />
+      <Association Name="TiposCampo_TiposCampoDet" Member="TiposCampoDet" ThisKey="idTipoCampo" OtherKey="idTipoCampo" Type="TiposCampoDet" />
+      <Association Name="TiposCampo_TiposCampoDet1" Member="TiposCampoDet1" ThisKey="idTipoCampo" OtherKey="idTipoCampoOtro" Type="TiposCampoDet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposCampoDet" Member="TiposCampoDet">
+    <Type Name="TiposCampoDet">
+      <Column Name="idTipoCampo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTipoCampoOtro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TiposCampo_TiposCampoDet" Member="TiposCampo" ThisKey="idTipoCampo" OtherKey="idTipoCampo" Type="TiposCampo" IsForeignKey="true" />
+      <Association Name="TiposCampo_TiposCampoDet1" Member="TiposCampo1" ThisKey="idTipoCampoOtro" OtherKey="idTipoCampo" Type="TiposCampo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposCliente" Member="TiposCliente">
+    <Type Name="TiposCliente">
+      <Column Name="idTipoCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="XMLMostrarCartera" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="XMLMostrarDatos" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="XMLMostrarCuentas" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="XMLMostrarAnalisis" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TiposCliente_Clientes" Member="Clientes" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Clientes" />
+      <Association Name="TiposCliente_Flujos" Member="Flujos" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Flujos" />
+      <Association Name="TiposCliente_Origenes" Member="Origenes" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Origenes" />
+      <Association Name="TiposCliente_Operadores_Asignaciones" Member="Operadores_Asignaciones" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Operadores_Asignaciones" />
+      <Association Name="TiposCliente_Plantillas" Member="Plantillas" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Plantillas" />
+      <Association Name="TiposCliente_TiposReporte" Member="TiposReporte" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposReporte" />
+      <Association Name="TiposCliente_Status" Member="Status" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="Status" />
+      <Association Name="TiposCliente_TiposCliente" Member="TiposCliente2" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" Cardinality="One" />
+      <Association Name="TiposCliente_TiposCliente" Member="TiposCliente1" ThisKey="idTipoCliente" OtherKey="idTipoCliente" Type="TiposCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposMovimiento" Member="TiposMovimiento">
+    <Type Name="TiposMovimiento">
+      <Column Name="idTipoMovimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TiposMovimiento_Movimientos" Member="Movimientos" ThisKey="idTipoMovimiento" OtherKey="idTipoMovimiento" Type="Movimientos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposObservaciones" Member="TiposObservaciones">
+    <Type Name="TiposObservaciones">
+      <Column Name="idTipoObservacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Severidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TiposObservaciones_PersonasObservaciones" Member="PersonasObservaciones" ThisKey="idTipoObservacion" OtherKey="idTipoObservacion" Type="PersonasObservaciones" />
+      <Association Name="Origenes_TiposObservaciones" Member="Origenes" ThisKey="idOrigen" OtherKey="idOrigen" Type="Origenes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposPersona" Member="TiposPersona">
+    <Type Name="TiposPersona">
+      <Column Name="idTipoPersona" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TiposPersona_Personas" Member="Personas" ThisKey="idTipoPersona" OtherKey="idTipoPersona" Type="Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwCuentas" Member="vwCuentas">
+    <Type Name="vwCuentas">
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalDolar" Type="System.Decimal" DbType="Decimal(38,14) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalLocal" Type="System.Decimal" DbType="Decimal(38,9) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoBase" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoBaseDolar" Type="System.Decimal" DbType="Decimal(38,14) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoBaseLocal" Type="System.Decimal" DbType="Decimal(38,9) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoIva" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoIvaDolar" Type="System.Decimal" DbType="Decimal(38,14) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoIvaLocal" Type="System.Decimal" DbType="Decimal(38,9) NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Moneda" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Antiguedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CambioDolar" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="MonedaLocal" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="CambioLocal" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Deuda" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="DeudaDolar" Type="System.Decimal" DbType="Decimal(38,14) NOT NULL" CanBeNull="false" />
+      <Column Name="DeudaLocal" Type="System.Decimal" DbType="Decimal(38,9) NOT NULL" CanBeNull="false" />
+      <Column Name="EnReclamo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EsMeta" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Operador_Cuentas" Method="Operador_Cuentas">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCampana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IncluyeAutomatico" Parameter="incluyeAutomatico" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Supervisado" Parameter="supervisado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="Operador_CuentasResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rif" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalLocal" Type="System.Decimal" DbType="Decimal(38,9)" CanBeNull="true" />
+      <Column Name="TotalDolar" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="RestanteLocal" Type="System.Decimal" DbType="Decimal(38,9)" CanBeNull="true" />
+      <Column Name="RestanteDolar" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="idPais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="FechaUltimaGestion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TipoStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusUltimaGestion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Moneda" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="TieneAviso" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UltimoOperador" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CuentasOperador" Method="CuentasOperador" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idPersona" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CuentasOperadorResult">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoRestante" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Datos" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CambioDolar" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="CambioLocal" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="idMoneda" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idFlujo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPaso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="idOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnReclamo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Anulada" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MontoBase" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="MontoIva" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.OperadoresSupervisados" Method="OperadoresSupervisados" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Jerarquia" Parameter="jerarquia" Type="System.String" DbType="VarChar(60)" />
+    <ElementType Name="OperadoresSupervisadosResult">
+      <Column Name="x" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Jerarquia" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FirmaOperador" Method="FirmaOperador" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.EstaBien" Method="EstaBien" IsComposable="true">
+    <Parameter Name="Datos" Parameter="datos" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="CodigoPersona" Parameter="codigoPersona" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.rptAnalisisPorCliente" Method="rptAnalisisPorCliente">
+    <Parameter Name="idPais" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="idCliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaIni" Parameter="fechaIni" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Supervisados" Parameter="supervisados" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="General" Parameter="general" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="rptAnalisisPorClienteResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="TipoPersona" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M0a30" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M30a45" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M45a60" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M60a90" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M90a120" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M120a180" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M180ainf" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="UltimaGestion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaUltimaGestion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptClienteCuentas" Method="rptClienteCuentas">
+    <Parameter Name="idCliente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rptClienteCuentasResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Factura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Buque" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Moneda" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoRestante" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MonedaLocal" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoLocal" Type="System.Decimal" DbType="Decimal(38,9)" CanBeNull="true" />
+      <Column Name="CambioLocal" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Viaje" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PuertoCarga" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PuertoDescarga" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoPersona" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptCorreosAdministrador" Method="rptCorreosAdministrador">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="rptCorreosAdministradorResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Ejecutivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="MotivoRechazo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Matar" Method="Matar">
+    <Parameter Name="Pid" Parameter="pid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CuentasGestion" Method="CuentasGestion" IsComposable="true">
+    <Parameter Name="idGestion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.OperadorVeAPersona" Method="OperadorVeAPersona" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idPersona" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.CuentasOperador_idCuenta" Method="CuentasOperador_idCuenta" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idPersona" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CuentasOperador_idCuentaResult">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptPersonasGestionadas" Method="rptPersonasGestionadas">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="idCliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Supervisados" Parameter="supervisados" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Gestionados" Parameter="gestionados" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="idPais" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="rptPersonasGestionadasResult">
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusUltimaGestion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UltimaGestion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaAsignacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M0a30" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M30a45" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M45a60" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M60a90" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M90a120" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M120a180" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+      <Column Name="M180ainf" Type="System.Decimal" DbType="Decimal(38,14)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptGestionesCuentas" Method="rptGestionesCuentas">
+    <Parameter Name="idCliente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rptGestionesCuentasResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Factura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoFactura" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Cambio" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Corriente" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M30" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M45" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M60" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M90" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M120" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M180" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaUltimaGestion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UltimaGestion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UltimoOperador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DistribuirOperador" Method="DistribuirOperador">
+    <Parameter Name="idDistribucion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Operadores_Persona" Method="Operadores_Persona">
+    <Parameter Name="idPersona" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Operadores_PersonaResult">
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptLogins" Method="rptLogins">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Supervisados" Parameter="supervisados" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="rptLoginsResult">
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Inicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Fin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CuentaActivaEnCampana" Method="CuentaActivaEnCampana" IsComposable="true">
+    <Parameter Name="idCuenta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCampana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.CuentaInactivaEnCampana" Method="CuentaInactivaEnCampana" IsComposable="true">
+    <Parameter Name="idCuenta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCampana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaIni" Parameter="fechaIni" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.CuentasRegla" Method="CuentasRegla">
+    <Parameter Name="idRegla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WhereExtra" Parameter="whereExtra" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CuentasReglaResult" Method="CuentasReglaResult">
+    <Parameter Name="idRegla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WhereExtra" Parameter="whereExtra" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="CuentasReglaResultResult">
+      <Column Name="idCuenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DistribuirCampana" Method="DistribuirCampana">
+    <Parameter Name="idDistribucion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearMetas" Method="CrearMetas">
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.rptLlamadas" Method="rptLlamadas">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Supervisados" Parameter="supervisados" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="rptLlamadasResult">
+      <Column Name="idLlamada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Operador" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Duracion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DuracionEfectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Grabacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertarCola" Method="InsertarCola">
+    <Parameter Name="idoperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idpersona" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lugar" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Responder" Method="Responder" IsComposable="true">
+    <Parameter Name="Data" Parameter="data" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.Bloqueos" Method="Bloqueos">
+    <ElementType Name="BloqueosResult">
+      <Column Name="p1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioBloqueado" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MaquinaBloqueada" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioBloqueador" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MaquinaBloqueadora" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="p2" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rptGestionesCuentas" Method="rptGestionesCuentas1">
+    <Parameter Name="idCliente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rptGestionesCuentasResult1">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pais" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Factura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoFactura" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Cambio" Type="System.Decimal" DbType="Decimal(20,8) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Corriente" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M30" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M45" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M60" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M90" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M120" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="M180" Type="System.Decimal" DbType="Decimal(20,4) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaUltimaGestion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UltimaGestion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UltimoOperador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Efectividad" Method="Efectividad" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.BuscarSiguienteGestion" Method="BuscarSiguienteGestion" IsComposable="true">
+    <Parameter Name="idOperador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

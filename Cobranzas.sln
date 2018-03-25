@@ -1,0 +1,131 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cobranzas", "Cobranzas\Cobranzas.csproj", "{FAC5A78C-498D-48F1-A362-067A2BE4C90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Correo", "Correo\Correo.csproj", "{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transporte", "Transporte\Transporte.csproj", "{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralIp", "CentralIp\CentralIp.csproj", "{4E44FF47-6440-4655-BE73-D1B533DBBB4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoExterno", "AccesoExterno\AccesoExterno.csproj", "{FD540728-6393-4FA3-84CB-75E47E5C0DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCIInterfaz", "SCIInterfaz\SCIInterfaz.csproj", "{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FAC5A78C-498D-48F1-A362-067A2BE4C90A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Debug|x86.ActiveCfg = Debug|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Debug|x86.Build.0 = Debug|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Release|Any CPU.ActiveCfg = Release|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Release|x86.ActiveCfg = Release|x86
+		{A1EB14C4-EEB4-4F4F-812A-7531764A51E0}.Release|x86.Build.0 = Release|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Debug|x86.ActiveCfg = Debug|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Debug|x86.Build.0 = Debug|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Release|Any CPU.ActiveCfg = Release|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Release|x86.ActiveCfg = Release|x86
+		{BCED6DFC-9B2C-42E5-8C1C-AADAC60DCF37}.Release|x86.Build.0 = Release|x86
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4E44FF47-6440-4655-BE73-D1B533DBBB4E}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FD540728-6393-4FA3-84CB-75E47E5C0DC1}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BC6CDFB6-2F57-4923-AE7D-E03EAE5E9EF2}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://veconinter.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Cobranzas\\Cobranzas.csproj
+		SccProjectName1 = Cobranzas
+		SccLocalPath1 = Cobranzas
+		SccProjectUniqueName2 = Entidades\\Entidades.csproj
+		SccProjectName2 = Entidades
+		SccLocalPath2 = Entidades
+		SccProjectUniqueName3 = Correo\\Correo.csproj
+		SccProjectName3 = Correo
+		SccLocalPath3 = Correo
+		SccProjectUniqueName4 = Transporte\\Transporte.csproj
+		SccProjectName4 = Transporte
+		SccLocalPath4 = Transporte
+		SccProjectUniqueName5 = CentralIp\\CentralIp.csproj
+		SccProjectName5 = CentralIp
+		SccLocalPath5 = CentralIp
+		SccProjectUniqueName6 = AccesoExterno\\AccesoExterno.csproj
+		SccProjectName6 = AccesoExterno
+		SccLocalPath6 = AccesoExterno
+		SccProjectUniqueName7 = SCIInterfaz\\SCIInterfaz.csproj
+		SccProjectName7 = SCIInterfaz
+		SccLocalPath7 = SCIInterfaz
+	EndGlobalSection
+EndGlobal

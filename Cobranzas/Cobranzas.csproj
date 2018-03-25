@@ -1,0 +1,1270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAC5A78C-498D-48F1-A362-067A2BE4C90A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cobranzas</RootNamespace>
+    <AssemblyName>Cobranzas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Cobranzas.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpenPOP, Version=2.0.4.369, Culture=neutral, PublicKeyToken=bebb5741791313cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Librerias\OpenPOP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Recursos.designer.cs">
+      <DependentUpon>Recursos.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Recursos.en.designer.cs">
+      <DependentUpon>Recursos.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Recursos.pt.designer.cs">
+      <DependentUpon>Recursos.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Codigo\Negocios.cs" />
+    <Compile Include="Codigo\UI.cs" />
+    <Compile Include="Descargas\Descargas.aspx.cs">
+      <DependentUpon>Descargas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descargas\Descargas.aspx.designer.cs">
+      <DependentUpon>Descargas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlAgenda.aspx.cs">
+      <DependentUpon>ctrlAgenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlAgenda.aspx.designer.cs">
+      <DependentUpon>ctrlAgenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlEliminarTelefono.aspx.cs">
+      <DependentUpon>ctrlEliminarTelefono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlEliminarTelefono.aspx.designer.cs">
+      <DependentUpon>ctrlEliminarTelefono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlFlujos.aspx.cs">
+      <DependentUpon>ctrlFlujos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlFlujos.aspx.designer.cs">
+      <DependentUpon>ctrlFlujos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlAdministrarTelefono.aspx.cs">
+      <DependentUpon>ctrlAdministrarTelefono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlAdministrarTelefono.aspx.designer.cs">
+      <DependentUpon>ctrlAdministrarTelefono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlPlantillas.aspx.cs">
+      <DependentUpon>ctrlPlantillas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlPlantillas.aspx.designer.cs">
+      <DependentUpon>ctrlPlantillas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlMetaDetalle.aspx.cs">
+      <DependentUpon>ctrlMetaDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlMetaDetalle.aspx.designer.cs">
+      <DependentUpon>ctrlMetaDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlExclusiones.aspx.cs">
+      <DependentUpon>ctrlExclusiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlExclusiones.aspx.designer.cs">
+      <DependentUpon>ctrlExclusiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlMetas.aspx.cs">
+      <DependentUpon>ctrlMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlMetas.aspx.designer.cs">
+      <DependentUpon>ctrlMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSuplente.aspx.cs">
+      <DependentUpon>ctrlSuplente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSuplente.aspx.designer.cs">
+      <DependentUpon>ctrlSuplente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\EstadoCuentaNaviera.aspx.cs">
+      <DependentUpon>EstadoCuentaNaviera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\EstadoCuentaNaviera.aspx.designer.cs">
+      <DependentUpon>EstadoCuentaNaviera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptClienteCuentas.aspx.cs">
+      <DependentUpon>rptClienteCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptClienteCuentas.aspx.designer.cs">
+      <DependentUpon>rptClienteCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptGestionesCuentas.aspx.cs">
+      <DependentUpon>rptGestionesCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptGestionesCuentas.aspx.designer.cs">
+      <DependentUpon>rptGestionesCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\Grabaciones.aspx.cs">
+      <DependentUpon>Grabaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\Grabaciones.aspx.designer.cs">
+      <DependentUpon>Grabaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptLlamadas.aspx.cs">
+      <DependentUpon>rptLlamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptLlamadas.aspx.designer.cs">
+      <DependentUpon>rptLlamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptCorreosAdministrador.aspx.cs">
+      <DependentUpon>rptCorreosAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptCorreosAdministrador.aspx.designer.cs">
+      <DependentUpon>rptCorreosAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlComentario.aspx.cs">
+      <DependentUpon>ctrlComentario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlComentario.aspx.designer.cs">
+      <DependentUpon>ctrlComentario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlStatus.aspx.cs">
+      <DependentUpon>ctrlStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlStatus.aspx.designer.cs">
+      <DependentUpon>ctrlStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReclamos.aspx.cs">
+      <DependentUpon>ctrlReclamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReclamos.aspx.designer.cs">
+      <DependentUpon>ctrlReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\extPersonas.aspx.cs">
+      <DependentUpon>extPersonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\extPersonas.aspx.designer.cs">
+      <DependentUpon>extPersonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptCompromisos.aspx.cs">
+      <DependentUpon>rptCompromisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptCompromisos.aspx.designer.cs">
+      <DependentUpon>rptCompromisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCompromisos.aspx.cs">
+      <DependentUpon>ctrlCompromisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCompromisos.aspx.designer.cs">
+      <DependentUpon>ctrlCompromisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlOperador.aspx.cs">
+      <DependentUpon>ctrlOperador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlOperador.aspx.designer.cs">
+      <DependentUpon>ctrlOperador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptAnalisisPorCliente.aspx.cs">
+      <DependentUpon>rptAnalisisPorCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptAnalisisPorCliente.aspx.designer.cs">
+      <DependentUpon>rptAnalisisPorCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptAvisos.aspx.cs">
+      <DependentUpon>rptAvisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptAvisos.aspx.designer.cs">
+      <DependentUpon>rptAvisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCampanas.aspx.cs">
+      <DependentUpon>ctrlCampanas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCampanas.aspx.designer.cs">
+      <DependentUpon>ctrlCampanas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCuenta.aspx.cs">
+      <DependentUpon>ctrlCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCuenta.aspx.designer.cs">
+      <DependentUpon>ctrlCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlEnvioCorreo.aspx.cs">
+      <DependentUpon>ctrlEnvioCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlEnvioCorreo.aspx.designer.cs">
+      <DependentUpon>ctrlEnvioCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlFiltros.aspx.cs">
+      <DependentUpon>ctrlFiltros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlFiltros.aspx.designer.cs">
+      <DependentUpon>ctrlFiltros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptGestiones.aspx.cs">
+      <DependentUpon>rptGestiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptGestiones.aspx.designer.cs">
+      <DependentUpon>rptGestiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoContacto.aspx.cs">
+      <DependentUpon>ctrlNuevoContacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoContacto.aspx.designer.cs">
+      <DependentUpon>ctrlNuevoContacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoPago.aspx.cs">
+      <DependentUpon>ctrlNuevoPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoPago.aspx.designer.cs">
+      <DependentUpon>ctrlNuevoPago.aspx</DependentUpon>
+    </Compile>
+    <Content Include="bin\OpenPOP.dll" />
+    <Content Include="Descargas\Descargas.aspx" />
+    <Content Include="Emergentes\ctrlAgenda.aspx" />
+    <Content Include="Emergentes\ctrlAgenda.aspx.js">
+      <DependentUpon>ctrlAgenda.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlEliminarTelefono.aspx" />
+    <Content Include="Emergentes\ctrlEliminarTelefono.aspx.js">
+      <DependentUpon>ctrlEliminarTelefono.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlFlujos.aspx" />
+    <Content Include="Emergentes\ctrlFlujos.aspx.js">
+      <DependentUpon>ctrlFlujos.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlAdministrarTelefono.aspx" />
+    <Content Include="Emergentes\ctrlAdministrarTelefono.aspx.js">
+      <DependentUpon>ctrlAdministrarTelefono.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\EstadoCuentaNaviera.aspx" />
+    <Content Include="Emergentes\rptGestiones.aspx.js">
+      <DependentUpon>rptGestiones.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlPlantillas.aspx.js">
+      <DependentUpon>ctrlPlantillas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlPlantillas.aspx" />
+    <Content Include="Emergentes\ctrlMetaDetalle.aspx.js">
+      <DependentUpon>ctrlMetaDetalle.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlMetaDetalle.aspx" />
+    <Content Include="Emergentes\ctrlExclusiones.aspx.js">
+      <DependentUpon>ctrlExclusiones.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlExclusiones.aspx" />
+    <Content Include="Emergentes\ctrlMetas.aspx.js">
+      <DependentUpon>ctrlMetas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlMetas.aspx" />
+    <Content Include="Emergentes\ctrlComentario.aspx.js">
+      <DependentUpon>ctrlComentario.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlSuplente.aspx" />
+    <Content Include="Emergentes\ctrlSuplente.aspx.js">
+      <DependentUpon>ctrlSuplente.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptClienteCuentas.aspx.js">
+      <DependentUpon>rptClienteCuentas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptClienteCuentas.aspx" />
+    <Content Include="Emergentes\rptGestionesCuentas.aspx.js">
+      <DependentUpon>rptGestionesCuentas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptGestionesCuentas.aspx" />
+    <Content Include="Emergentes\Grabaciones.aspx" />
+    <Content Include="Emergentes\rptLlamadas.aspx.js">
+      <DependentUpon>rptLlamadas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptLlamadas.aspx" />
+    <Content Include="Emergentes\rptCorreosAdministrador.aspx.js">
+      <DependentUpon>rptCorreosAdministrador.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptCorreosAdministrador.aspx" />
+    <Content Include="Emergentes\ctrlComentario.aspx" />
+    <Content Include="Emergentes\ctrlStatus.aspx.js">
+      <DependentUpon>ctrlStatus.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlStatus.aspx" />
+    <Content Include="Emergentes\ctrlReclamos.aspx" />
+    <Content Include="Emergentes\ctrlReclamos.aspx.js">
+      <DependentUpon>ctrlReclamos.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\extPersonas.aspx" />
+    <Content Include="Emergentes\rptRanking.aspx.js">
+      <DependentUpon>rptRanking.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptRanking.aspx" />
+    <Content Include="Emergentes\rptPersonasGestionadas.aspx.js">
+      <DependentUpon>rptPersonasGestionadas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptCompromisos.aspx.js">
+      <DependentUpon>rptCompromisos.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptCompromisos.aspx" />
+    <Content Include="Emergentes\ctrlCompromisos.aspx" />
+    <Content Include="Emergentes\ctrlCompromisos.aspx.js">
+      <DependentUpon>ctrlCompromisos.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlOperador.aspx" />
+    <Content Include="Emergentes\rptAnalisisPorCliente.aspx" />
+    <Content Include="Emergentes\rptAnalisisPorCliente.aspx.js">
+      <DependentUpon>rptAnalisisPorCliente.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptAvisos.aspx.js">
+      <DependentUpon>rptAvisos.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptAvisos.aspx" />
+    <Content Include="Emergentes\ctrlAviso.aspx.js">
+      <DependentUpon>ctrlAviso.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlCampanas.aspx.js">
+      <DependentUpon>ctrlCampanas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlCorreo.aspx.js">
+      <DependentUpon>ctrlCorreo.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlCuenta.aspx" />
+    <Content Include="Emergentes\ctrlCuentasSinAsignar.aspx.js">
+      <DependentUpon>ctrlCuentasSinAsignar.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlDistCampanas.aspx.js">
+      <DependentUpon>ctrlDistCampanas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlDistOperador.aspx.js">
+      <DependentUpon>ctrlDistOperador.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlEnvioCorreo.aspx" />
+    <Content Include="Emergentes\ctrlEnvioCorreo.aspx.js">
+      <DependentUpon>ctrlEnvioCorreo.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlFiltros.aspx" />
+    <Content Include="Emergentes\ctrlFiltros.aspx.js">
+      <DependentUpon>ctrlFiltros.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptGestiones.aspx" />
+    <Content Include="Emergentes\ctrlLlamada.aspx.js">
+      <DependentUpon>ctrlLlamada.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlNuevoAviso.aspx.js">
+      <DependentUpon>ctrlNuevoAviso.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlNuevoContacto.aspx" />
+    <Content Include="Emergentes\ctrlNuevoPago.aspx.js">
+      <DependentUpon>ctrlNuevoPago.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlNuevoReclamo.aspx" />
+    <Content Include="Emergentes\ctrlNuevoReclamo.aspx.js">
+      <DependentUpon>ctrlNuevoReclamo.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlNuevoTelefono.aspx" />
+    <Content Include="Emergentes\ctrlReglas.aspx.js">
+      <DependentUpon>ctrlReglas.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlOperadores.aspx" />
+    <Content Include="Emergentes\ctrlOperadores.aspx.js">
+      <DependentUpon>ctrlOperadores.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlReporte.aspx" />
+    <Content Include="Emergentes\ctrlReporte.aspx.js">
+      <DependentUpon>ctrlReporte.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\ctrlSoportes.aspx" />
+    <Content Include="Emergentes\ctrlSubirSoportes.aspx" />
+    <Content Include="Emergentes\ctrlSubirSoportes.aspx.js">
+      <DependentUpon>ctrlSubirSoportes.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\repAnalisis.aspx" />
+    <Content Include="Emergentes\rptPersonasGestionadas.aspx" />
+    <Content Include="Emergentes\rptLogins.aspx.js">
+      <DependentUpon>rptLogins.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptLogins.aspx" />
+    <Content Include="Emergentes\rptPagosCobrador.aspx" />
+    <Content Include="Emergentes\rptPagosCobrador.aspx.js">
+      <DependentUpon>rptPagosCobrador.aspx</DependentUpon>
+    </Content>
+    <Content Include="Emergentes\rptRankingEjecutivo.aspx" />
+    <Content Include="Emergentes\rptRankingEjecutivo.aspx.js">
+      <DependentUpon>rptRankingEjecutivo.aspx</DependentUpon>
+    </Content>
+    <Content Include="Estilos\Calendario.css" />
+    <Content Include="Emergentes\ctrlAviso.aspx" />
+    <Content Include="Emergentes\ctrlCampanas.aspx" />
+    <Content Include="Emergentes\ctrlCorreo.aspx" />
+    <Content Include="Emergentes\ctrlNuevoAviso.aspx" />
+    <Content Include="Default.aspx" />
+    <Compile Include="Codigo\Controles.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codigo\Sesion.cs" />
+    <Compile Include="Emergentes\ctrlAviso.aspx.cs">
+      <DependentUpon>ctrlAviso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlAviso.aspx.designer.cs">
+      <DependentUpon>ctrlAviso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCorreo.aspx.cs">
+      <DependentUpon>ctrlCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCorreo.aspx.designer.cs">
+      <DependentUpon>ctrlCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoAviso.aspx.cs">
+      <DependentUpon>ctrlNuevoAviso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoAviso.aspx.designer.cs">
+      <DependentUpon>ctrlNuevoAviso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Emergentes\ctrlCuentasSinAsignar.aspx" />
+    <Content Include="Emergentes\ctrlDistCampanas.aspx" />
+    <Content Include="Emergentes\ctrlDistOperador.aspx" />
+    <Content Include="Emergentes\ctrlReglas.aspx" />
+    <Content Include="Estilos\Estilos.css" />
+    <Content Include="Estilos\images\animated-overlay.gif" />
+    <Content Include="Estilos\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Estilos\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Estilos\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Estilos\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-hard_100_eeeeff_1x100.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-hard_35_000040_1x100.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-soft_75_ccccff_1x100.png" />
+    <Content Include="Estilos\images\ui-bg_inset-soft_65_000040_1x100.png" />
+    <Content Include="Estilos\images\ui-icons_000040_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_222222_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
+    <Content Include="Gestion.aspx" />
+    <Content Include="Gestion.aspx.js">
+      <DependentUpon>Gestion.aspx</DependentUpon>
+    </Content>
+    <Content Include="Global.asax" />
+    <Compile Include="Emergentes\ctrlCuentasSinAsignar.aspx.cs">
+      <DependentUpon>ctrlCuentasSinAsignar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlCuentasSinAsignar.aspx.designer.cs">
+      <DependentUpon>ctrlCuentasSinAsignar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlDistCampanas.aspx.cs">
+      <DependentUpon>ctrlDistCampanas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlDistCampanas.aspx.designer.cs">
+      <DependentUpon>ctrlDistCampanas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlDistOperador.aspx.cs">
+      <DependentUpon>ctrlDistOperador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlDistOperador.aspx.designer.cs">
+      <DependentUpon>ctrlDistOperador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoTelefono.aspx.cs">
+      <DependentUpon>ctrlNuevoTelefono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoTelefono.aspx.designer.cs">
+      <DependentUpon>ctrlNuevoTelefono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReglas.aspx.cs">
+      <DependentUpon>ctrlReglas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReglas.aspx.designer.cs">
+      <DependentUpon>ctrlReglas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoReclamo.aspx.cs">
+      <DependentUpon>ctrlNuevoReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlNuevoReclamo.aspx.designer.cs">
+      <DependentUpon>ctrlNuevoReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlOperadores.aspx.cs">
+      <DependentUpon>ctrlOperadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlOperadores.aspx.designer.cs">
+      <DependentUpon>ctrlOperadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReporte.aspx.cs">
+      <DependentUpon>ctrlReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlReporte.aspx.designer.cs">
+      <DependentUpon>ctrlReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSoportes.aspx.cs">
+      <DependentUpon>ctrlSoportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSoportes.aspx.designer.cs">
+      <DependentUpon>ctrlSoportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSubirSoportes.aspx.cs">
+      <DependentUpon>ctrlSubirSoportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlSubirSoportes.aspx.designer.cs">
+      <DependentUpon>ctrlSubirSoportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\repAnalisis.aspx.cs">
+      <DependentUpon>repAnalisis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\repAnalisis.aspx.designer.cs">
+      <DependentUpon>repAnalisis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptRanking.aspx.cs">
+      <DependentUpon>rptRanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptRanking.aspx.designer.cs">
+      <DependentUpon>rptRanking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptPersonasGestionadas.aspx.cs">
+      <DependentUpon>rptPersonasGestionadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptPersonasGestionadas.aspx.designer.cs">
+      <DependentUpon>rptPersonasGestionadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptLogins.aspx.cs">
+      <DependentUpon>rptLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptLogins.aspx.designer.cs">
+      <DependentUpon>rptLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptPagosCobrador.aspx.cs">
+      <DependentUpon>rptPagosCobrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptPagosCobrador.aspx.designer.cs">
+      <DependentUpon>rptPagosCobrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergentes\rptRankingEjecutivo.aspx.cs">
+      <DependentUpon>rptRankingEjecutivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\rptRankingEjecutivo.aspx.designer.cs">
+      <DependentUpon>rptRankingEjecutivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion.aspx.cs">
+      <DependentUpon>Gestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion.aspx.designer.cs">
+      <DependentUpon>Gestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Content Include="Img\Bandeja.png" />
+    <Content Include="Img\Bandeja24.png" />
+    <Content Include="Img\Banderas\AGO.png" />
+    <Content Include="Img\Banderas\AGO24.png" />
+    <Content Include="Img\Banderas\ARG.png" />
+    <Content Include="Img\Banderas\ARG24.png" />
+    <Content Include="Img\Banderas\BEL.png" />
+    <Content Include="Img\Banderas\BEL24.png" />
+    <Content Include="Img\Banderas\BRA.png" />
+    <Content Include="Img\Banderas\BRA24.png" />
+    <Content Include="Img\Banderas\BRB.png" />
+    <Content Include="Img\Banderas\BRB24.png" />
+    <Content Include="Img\Banderas\COL.png" />
+    <Content Include="Img\Banderas\COL24.png" />
+    <Content Include="Img\Banderas\CRI.png" />
+    <Content Include="Img\Banderas\CRI24.png" />
+    <Content Include="Img\Banderas\GUY.png" />
+    <Content Include="Img\Banderas\GUY24.png" />
+    <Content Include="Img\Banderas\HND.png" />
+    <Content Include="Img\Banderas\HND24.png" />
+    <Content Include="Img\Banderas\MEX.png" />
+    <Content Include="Img\Banderas\MEX24.png" />
+    <Content Include="Img\Banderas\SXM.png" />
+    <Content Include="Img\Banderas\SXM24.png" />
+    <Content Include="Img\Btn\Aceptar16.png" />
+    <Content Include="Img\Btn\Aceptar24.png" />
+    <Content Include="Img\Btn\Aceptar32.png" />
+    <Content Include="Img\Btn\Aceptar48.png" />
+    <Content Include="Img\Btn\Aceptar64.png" />
+    <Content Include="Img\Btn\Agregar16.png" />
+    <Content Include="Img\Btn\Agregar24.png" />
+    <Content Include="Img\Btn\Agregar32.png" />
+    <Content Include="Img\Btn\Agregar48.png" />
+    <Content Include="Img\Btn\Agregar64.png" />
+    <Content Include="Img\Btn\Anterior16.png" />
+    <Content Include="Img\Btn\Anterior24.png" />
+    <Content Include="Img\Btn\Anterior32.png" />
+    <Content Include="Img\Btn\Anterior48.png" />
+    <Content Include="Img\Btn\Anterior64.png" />
+    <Content Include="Img\Btn\Eliminar16.png" />
+    <Content Include="Img\Btn\Eliminar24.png" />
+    <Content Include="Img\Btn\Eliminar32.png" />
+    <Content Include="Img\Btn\Eliminar48.png" />
+    <Content Include="Img\Btn\Eliminar64.png" />
+    <Content Include="Img\Btn\Flecha16.png" />
+    <Content Include="Img\Btn\Flecha24.png" />
+    <Content Include="Img\Btn\Flecha32.png" />
+    <Content Include="Img\Btn\Flecha48.png" />
+    <Content Include="Img\Btn\Flecha64.png" />
+    <Content Include="Img\Btn\Guardar16.png" />
+    <Content Include="Img\Btn\Guardar24.png" />
+    <Content Include="Img\Btn\Guardar32.png" />
+    <Content Include="Img\Btn\Guardar48.png" />
+    <Content Include="Img\Btn\Guardar64.png" />
+    <Content Include="Img\Btn\Mano16.png" />
+    <Content Include="Img\Btn\Mano24.png" />
+    <Content Include="Img\Btn\Mano32.png" />
+    <Content Include="Img\Btn\Mano48.png" />
+    <Content Include="Img\Btn\Mano64.png" />
+    <Content Include="Img\Btn\Siguiente16.png" />
+    <Content Include="Img\Btn\Siguiente24.png" />
+    <Content Include="Img\Btn\Siguiente32.png" />
+    <Content Include="Img\Btn\Siguiente48.png" />
+    <Content Include="Img\Btn\Siguiente64.png" />
+    <Content Include="Img\btn_pestana.png" />
+    <Content Include="Img\Cancelar.png" />
+    <Content Include="Img\Cancelar48.png" />
+    <Content Include="Img\cargando.gif" />
+    <Content Include="Img\Config64.png" />
+    <Content Include="Img\Config.png" />
+    <Content Include="Img\CorreoEntrante16.png" />
+    <Content Include="Img\CorreoError16.png" />
+    <Content Include="Img\CorreoLeido16.png" />
+    <Content Include="Img\CorreoSaliente16.png" />
+    <Content Include="Img\Editor.gif" />
+    <Content Include="Img\Equis.png" />
+    <Content Include="Img\filtroa.png" />
+    <Content Include="Img\filtroi.png" />
+    <Content Include="Img\flecha.gif" />
+    <Content Include="Img\Fondo_Bandeja.png" />
+    <Content Include="Img\Fondo_Distribucion.png" />
+    <Content Include="Img\Fondo_Sistema.png" />
+    <Content Include="Img\Grafico1.gif" />
+    <Content Include="Img\Grafico2.GIF" />
+    <Content Include="Img\interrogacion.png" />
+    <Content Include="Img\Mosaico_Fondo.png" />
+    <Content Include="Img\Banderas\PAN.png" />
+    <Content Include="Img\Banderas\PAN24.png" />
+    <Content Include="Img\Banderas\PRI.png" />
+    <Content Include="Img\Banderas\PRI24.png" />
+    <Content Include="Img\Banderas\Todas.bmp" />
+    <Content Include="Img\Banderas\TTO.png" />
+    <Content Include="Img\Banderas\TTO24.png" />
+    <Content Include="Img\Banderas\USA.png" />
+    <Content Include="Img\Banderas\USA24.png" />
+    <Content Include="Img\Banderas\VEN.png" />
+    <Content Include="Img\Banderas\VEN24.png" />
+    <Content Include="Img\Banderas\ZAF.png" />
+    <Content Include="Img\Banderas\ZAF24.png" />
+    <Content Include="Img\boton.png" />
+    <Content Include="Img\Cal.png" />
+    <Content Include="Img\Fondo_Cartera.png" />
+    <Content Include="Img\Fondo_Gestion.png" />
+    <Content Include="Img\fondo_grande.png" />
+    <Content Include="Img\Fondo_Indicadores.png" />
+    <Content Include="Img\fondo_msgbox.png" />
+    <Content Include="Img\fondo_pequeno.png" />
+    <Content Include="Img\Fondo_Reportes.png" />
+    <Content Include="Img\Fondo_Supervision.png" />
+    <Content Include="Img\Logo.jpg" />
+    <Content Include="Img\Nada24.png" />
+    <Content Include="Img\Negativo24.png" />
+    <Content Include="Img\Neutral24.png" />
+    <Content Include="Img\Originales\Fondo_Bandeja2.png" />
+    <Content Include="Img\Originales\Fondo_Cartera2.png" />
+    <Content Include="Img\Originales\Fondo_Distribucion2.png" />
+    <Content Include="Img\Originales\Fondo_Gestion2.png" />
+    <Content Include="Img\Originales\Fondo_Indicadores2.png" />
+    <Content Include="Img\Originales\Fondo_Reportes2.png" />
+    <Content Include="Img\Originales\Icono_Supervision.png" />
+    <Content Include="Img\Originales\images.jpg" />
+    <Content Include="Img\Originales\operador.png" />
+    <Content Include="Img\Pause.png" />
+    <Content Include="Img\Play.png" />
+    <Content Include="Img\Salir.png" />
+    <Content Include="Img\Sistema.png" />
+    <Content Include="Img\Sistema16.png" />
+    <Content Include="Img\Sistema24.png" />
+    <Content Include="Img\Sistema32.png" />
+    <Content Include="Img\Sistema48.png" />
+    <Content Include="Img\Sistema64.png" />
+    <Content Include="Img\Stop.png" />
+    <Content Include="Img\Telefono16.png" />
+    <Content Include="Img\Temp.png" />
+    <Content Include="Img\Temp\Novo.png" />
+    <Content Include="Img\Temp\New.png" />
+    <Content Include="Img\Temp\Nuevo.png" />
+    <Content Include="Img\Ok.png" />
+    <Content Include="Img\Ok48.png" />
+    <Content Include="Img\Positivo24.png" />
+    <Content Include="Img\Reporte.png" />
+    <Content Include="Img\Reporte24.png" />
+    <Content Include="Img\Seccion.gif" />
+    <Content Include="Img\Seccion.jpg" />
+    <Content Include="Img\Soporte.png" />
+    <Content Include="Img\Soporte16.png" />
+    <Content Include="Img\Soporte24.png" />
+    <Content Include="Img\Soporte_16.png" />
+    <Content Include="Img\Telefono.png" />
+    <Content Include="Img\Titulo_Seccion.png" />
+    <Content Include="Img\Titulo_Seccion_in.png" />
+    <Content Include="Img\Usuario.png" />
+    <Content Include="Img\Usuario16.png" />
+    <Content Include="Img\Usuario24.png" />
+    <Content Include="Estilos\jquery-ui-1.10.3.css" />
+    <Content Include="Img\UsuarioAdjunto16.png" />
+    <Content Include="Librerias\OpenPOP.dll" />
+    <Content Include="Emergentes\ctrlLlamada.aspx" />
+    <Content Include="Pruebas.aspx" />
+    <Content Include="Recursos.aspx" />
+    <Content Include="Scripts\Calendario.js" />
+    <Content Include="Scripts\Conversiones.js" />
+    <Content Include="Scripts\DOM.js" />
+    <Content Include="Scripts\Editor.js" />
+    <Content Include="Scripts\General.js" />
+    <Content Include="Scripts\Graficos.js" />
+    <Content Include="Scripts\InterfazGrafica.js" />
+    <Content Include="Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.dialogextend.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-es.js" />
+    <Content Include="Scripts\Negocios.js" />
+    <Content Include="Scripts\ordenacion.js" />
+    <Content Include="Scripts\Servicios.js" />
+    <Content Include="Scripts\validaciones.js" />
+    <Content Include="Servicios\wsCobranzas.svc" />
+    <Content Include="Estilos\Site.css" />
+    <Content Include="Site.master" />
+    <Compile Include="Emergentes\ctrlLlamada.aspx.cs">
+      <DependentUpon>ctrlLlamada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergentes\ctrlLlamada.aspx.designer.cs">
+      <DependentUpon>ctrlLlamada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pruebas.aspx.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pruebas.aspx.designer.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos.aspx.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recursos.aspx.designer.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\wsCobranzas.svc.cs">
+      <DependentUpon>wsCobranzas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Content Include="Temp\default.html" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="DynamicData\web.config" />
+    <Content Include="DynamicData\Content\GridViewPager.ascx" />
+    <Compile Include="DynamicData\Content\GridViewPager.ascx.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Content\GridViewPager.ascx.designer.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Content\Images\Back.gif" />
+    <Content Include="DynamicData\Content\Images\header_back.gif" />
+    <Content Include="DynamicData\Content\Images\PgFirst.gif" />
+    <Content Include="DynamicData\Content\Images\PgLast.gif" />
+    <Content Include="DynamicData\Content\Images\PgNext.gif" />
+    <Content Include="DynamicData\Content\Images\PgPrev.gif" />
+    <Content Include="DynamicData\Content\Images\plus.gif" />
+    <Content Include="DynamicData\EntityTemplates\Default.ascx" />
+    <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\EntityTemplates\Default.ascx.designer.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
+    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.cs">
+      <DependentUpon>Default_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.designer.cs">
+      <DependentUpon>Default_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
+    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.cs">
+      <DependentUpon>Default_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.designer.cs">
+      <DependentUpon>Default_Insert.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Filters\Boolean.ascx" />
+    <Compile Include="DynamicData\Filters\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Filters\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Filters\Enumeration.ascx" />
+    <Compile Include="DynamicData\Filters\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Filters\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Filters\ForeignKey.ascx" />
+    <Compile Include="DynamicData\Filters\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Filters\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Details.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Edit.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Insert.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\List.aspx" />
+    <Compile Include="DynamicData\PageTemplates\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\ListDetails.aspx" />
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.designer.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+    </Compile>
+    <Content Include="Emergentes\ctrlNuevoPago.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
+    <Folder Include="DynamicData\CustomPages\" />
+    <Folder Include="PlantillasReportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Datos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Scripts\jquery-1.10.2.min.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\Calidad.pubxml" />
+    <None Include="Properties\PublishProfiles\Desarrollo.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalDesarrollo.pubxml" />
+    <None Include="Properties\PublishProfiles\Nueva Calidad.pubxml" />
+    <None Include="Properties\PublishProfiles\Nueva Producción.pubxml" />
+    <None Include="Properties\PublishProfiles\Produccion.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CentralIp\CentralIp.csproj">
+      <Project>{4E44FF47-6440-4655-BE73-D1B533DBBB4E}</Project>
+      <Name>CentralIp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{DC4BF2DB-D83B-469D-8E9A-0ADAFB733938}</Project>
+      <Name>Entidades</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Recursos.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Recursos.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Recursos.pt.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Recursos.pt.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Recursos.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Recursos.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6387</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

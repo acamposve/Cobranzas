@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d57b4b42-32be-4188-8297-bda66645dc1e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8990/Servicios/ServicioOperador.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioOperador.xsd" MetadataType="Schema" ID="0fcc9aec-fe2e-46da-976b-0a1ae5cb484c" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioOperador1.xsd" MetadataType="Schema" ID="38cb7b7f-d6e2-41ae-bd0c-dbdc13b3d1d9" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioOperador.wsdl" MetadataType="Wsdl" ID="6d57f02d-4e7f-4c3a-a080-2e79053bad3e" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?wsdl" />
+    <MetadataFile FileName="ServicioOperador2.xsd" MetadataType="Schema" ID="d4ee36da-777b-4c09-bc06-e96a37ac7c80" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServicioOperador3.xsd" MetadataType="Schema" ID="d24032f4-e97c-46c8-a89b-0c48f858d7c0" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioOperador.disco" MetadataType="Disco" ID="39281fea-e851-43a1-9aea-4415875c8ab6" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?disco" />
+    <MetadataFile FileName="ServicioOperador4.xsd" MetadataType="Schema" ID="3490994f-6999-4ae7-9af3-2e86e58e6cb2" SourceId="1" SourceUrl="http://localhost:8990/Servicios/ServicioOperador.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://veccsvs270.bremat.local:8990/Servicios/ServicioRanking.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" />
+  <xs:element name="Ranking_lst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ranking_lstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" minOccurs="0" name="Ranking_lstResult" nillable="true" type="q1:ArrayOfclsMetasOperador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ranking_Operador_lst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha1" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Fecha2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ranking_Operador_lstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" minOccurs="0" name="Ranking_Operador_lstResult" nillable="true" type="q2:ArrayOfclsMetasOperador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

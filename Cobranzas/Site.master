@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="Cobranzas.Site" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><asp:Literal runat="server" ID="litTitulo" Text="<%$ Resources:Recursos, titSystem %>"></asp:Literal></title>
+    <link rel="shorcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="/Estilos/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Estilos/Estilos.css?ver=9" rel="stylesheet" type="text/css" />
+    <link href="/Estilos/Calendario.css" rel="stylesheet" type="text/css" />
+    <link href="/Estilos/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+        <script type="text/javascript">
+           document.createElement("nav");
+           document.createElement("header");
+           document.createElement("footer");
+           document.createElement("section");
+           document.createElement("article");
+           document.createElement("aside");
+           document.createElement("hgroup");
+        </script>
+    <![endif]-->
+    <script src="/Scripts/Conversiones.js?ver=5" type="text/javascript"></script>
+    <script src="/Scripts/validaciones.js?ver=4" type="text/javascript"></script>
+    <script src="/Recursos.aspx?ver=1" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.ui.datepicker-es.js" type="text/javascript"></script>
+    <script src="/Scripts/General.js?ver=6" type="text/javascript"></script>
+    <script src="/Scripts/ordenacion.js?ver=10" type="text/javascript"></script>
+    <script src="/Scripts/DOM.js?ver=74" type="text/javascript"></script>
+    <script src="/Scripts/InterfazGrafica.js?ver=6" type="text/javascript"></script>
+    <script src="/Scripts/Calendario.js" type="text/javascript"></script>
+    <script src="/Scripts/Servicios.js?ver=9" type="text/javascript"></script>
+    <script src="/Scripts/Negocios.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.dialogextend.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="Cargando" class="Cargando" style="display: none;">
+        Cargando (<span id="Numero"></span>)...</div>
+    <form id="form1" runat="server">
+    <div>
+        <%-- TODO: Habilite la presentación parcial estableciendo el atributo EnablePartialRendering en "true" para ofrecer una experiencia de exploración más regular.
+                 Si se deja la presentación parcial deshabilitada, se consigue una experiencia de depuración mejor cuando la aplicación está en desarrollo. --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="false" />
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <div id="msgbox" title="Sistema de Cobranzas" style="display: none;">
+    </div>
+    <div id="emergente" title="Sistema de Cobranzas" style="display: none;">
+        <iframe src="" width="100%" height="100%" style="border: 0; background-color: transparent;"></iframe>
+        <!--frameborder="0" seamless="seamless"-->
+    </div>
+    <div id="llamada" title="Sistema de Cobranzas" style="display: none;">
+        <iframe src="" width="100%" height="100%" style="border: 0; background-color: transparent;"></iframe>
+        <!--frameborder="0" seamless="seamless"-->
+    </div>
+    <div id="aviso" title="Sistema de Cobranzas" style="display: none;">
+        <iframe src="" width="100%" height="100%" style="border: 0; background-color: transparent;"></iframe>
+        <!--frameborder="0" seamless="seamless"-->
+    </div>
+</body>
+</html>

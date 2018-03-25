@@ -1,0 +1,742 @@
+﻿article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+    display: block;
+}
+body
+{
+    margin: 0;
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+}
+header
+{
+    display: block;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+footer
+{
+    position: fixed;
+    display: block;
+    left: 0px;
+    right: 20px;
+    bottom: 0px;
+    height: 20px;
+    background-color: #000040;
+    color: #FFFFFF;
+}
+h1
+{
+    font-size: 20px;
+}
+h2
+{
+    font-size: 18px;
+    font-variant: small-caps;
+}
+h3
+{
+    font-size: 16px;
+}
+h3
+{
+    font-size: 14px;
+}
+.Cargando
+{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    height: 32px;
+    z-index: 1000;
+    background-color: Yellow;
+    padding-left: 32px;
+    border-radius: 4px;
+    background-image: url('/Img/cargando.gif');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    font-size: large;
+}
+.Login
+{
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell; /*background-image:url('Img/Mosaico_Fondo.png');     background-repeat:repeat;*/
+}
+.Login table
+{
+    width: 100%;
+    height: 100%;
+}
+.TablaDatos
+{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid blue;
+    font-size: small;
+}
+.TablaDatos th
+{
+    font-weight: bold;
+    color: #000040;
+    text-align: left;
+    border: 1px solid #000040;
+}
+.TablaDatos td
+{
+    border: 1px solid #000040;
+}
+.Tabla
+{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid blue;
+    font-size: small;
+}
+.Tabla tr
+{
+}
+.Tabla tr:hover
+{
+    background-color: #CCCCFF;
+}
+.Tabla tr th
+{
+    background-color: #000040;
+    color: #FFFFFF;
+    border: 1px solid #000040;
+    font-weight: bold;
+    /*text-align: left;*/
+}
+.Tabla tr td
+{
+    /*    background-color: transparent;*/
+    color: #000040;
+    border: 1px solid #000040;
+}
+.Correo
+{
+    cursor: pointer;
+}
+#Encabezado
+{
+    float: left;
+    background-image: url('/Img/Logo.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 350px;
+}
+#Basicos
+{
+    float: right;
+    height: 100%;
+}
+#Gestion
+{
+    float: right;
+    height: 100%;
+}
+#Salir
+{
+    float: right;
+    height: 100%;
+}
+
+#Avisos
+{
+    background-color: White;
+    border: 2px solid #000040;
+    top: 100px;
+    width: 350px;
+    left: -340px;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    border-radius: 0px 10px 10px 0px; /* 10px 15x 20px;*/
+}
+#Cuerpo
+{
+    position: fixed;
+    left: 10px;
+    top: 100px;
+    bottom: 27px; /*20*/
+    right: 10px; /*0*/
+}
+#pnlGestion
+{
+    width: 100%;
+    height: 100%;
+}
+.Pestana
+{
+    display: table-cell; /*border: 1px solid transparent;*/ /*background-image: url('Img/Titulo_Seccion_in.png');*/ /*background-repeat: repeat-x;*/ /*height: 24px;*/
+    cursor: pointer;
+    margin-right: 2px; /*border-right-color: Black;*/ /*Prueba*/
+    height: 35px;
+    padding: 0px 10px 0px 10px;
+    vertical-align: middle;
+    border: 1px solid #0000FF;
+    background-color: #000040;
+    color: White;
+}
+.Pestana:hover
+{
+    color: #0000FF;
+}
+.PestanaSel
+{
+    display: table-cell;
+    border: 1px solid #FF0000; /*background-image: url('Img/Titulo_Seccion.png');*/ /*background-repeat: repeat-x;*/ /*height: 24px;*/
+    cursor: default;
+    margin-right: 2px; /*Prueba*/
+    background-color: #800000;
+    color: White;
+    height: 35px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.PanelGestion
+{
+    position: absolute;
+    bottom: 0;
+    top: 33px;
+    width: 100%; /*height: 100%;*/
+    overflow: scroll;
+    display: none;
+    border: 1px solid black;
+    background-color: #CCCCCC;
+}
+#tabSistema
+{
+    background-image: url('/Img/Fondo_Sistema.png');
+    background-repeat: repeat;
+}
+#tabIndicadores
+{
+    background-image: url('/Img/Fondo_Indicadores.png');
+    background-repeat: repeat;
+}
+#tabBandejaEntrada
+{
+    background-image: url('/Img/Fondo_Bandeja.png');
+    background-repeat: repeat;
+}
+#tabCartera
+{
+    background-image: url('/Img/Fondo_Cartera.png');
+    background-repeat: repeat;
+}
+#tabGestion
+{
+    background-image: url('/Img/Fondo_Gestion.png');
+    background-repeat: repeat;
+}
+#tabReportes
+{
+    background-image: url('/Img/Fondo_Reportes.png');
+    background-repeat: repeat;
+}
+#tabSupervision
+{
+    background-image: url('/Img/Fondo_Supervision.png');
+    background-repeat: repeat;
+}
+#tabDistribucion
+{
+    background-image: url('/Img/Fondo_Distribucion.png');
+    background-repeat: repeat;
+}
+.divSeccion
+{
+    /*border: 1px solid #000040;*/
+    margin: 10px 10px 0px 10px;
+}
+.EncSeccion
+{
+    width: 100%;
+    border: 1px solid #000040; /*background-color: Lime;*/
+    background-image: url('/Img/Titulo_Seccion.png');
+    background-repeat: repeat-x;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: White;
+}
+.EncSeccion:hover
+{
+    background-image: url('/Img/Titulo_Seccion_in.png');
+    color: Blue;
+}
+.EncSeccion:before
+{
+    content: url('/Img/flecha.gif');
+}
+.Seccion
+{
+    width: 100%;
+    border: 1px solid #000040;
+    background-color: Transparent;
+    display: none;
+    margin-bottom: 10px;
+}
+.SeccionCliente
+{
+    width: 300px;
+    height: 100%; /*position:absolute;*/
+    border: 1 solid black;
+    background-color: white;
+    display: block; /*left:0px;     top:0px;*/
+    float: right;
+}
+
+.Contacto
+{
+}
+.Telefono, .Pagina, .Adjunto, .Adjunto2, .AdjuntoSL
+{
+    cursor: pointer;
+    display: inline-block; /*text-decoration:underline;*/
+    margin: 3px;
+    padding: 2px;
+    background-color: #CCCCFF;
+    border: 1px solid #8888FF;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.Adjunto
+{
+    /*cursor: pointer;     display: inline-block;      margin: 3px;     padding: 2px;     background-color: #CCCCFF;     border: 1px solid #8888FF;     border-radius: 4px;     text-decoration: none;*/
+    background-position: right center;
+    background-image: url("/Img/Equis.png");
+    background-repeat: no-repeat;
+    padding-right: 16px;
+}
+.PaginaActual
+{
+    /*    cursor: pointer;*/
+    display: inline-block; /*text-decoration:underline;*/
+    margin: 3px;
+    padding: 2px;
+    background-color: #8080FF;
+    border: 1px solid #4040FF;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.Telefono:hover, .Adjunto:hover
+{
+    color: white;
+    background-color: #000040;
+}
+.Telefonos
+{
+}
+.Nombre
+{
+}
+.Cargo
+{
+}
+.Soportes
+{
+}
+.Soporte
+{
+    background-image: url('/Img/Soporte.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 48px;
+    padding-left: 48px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.Soporte:hover
+{
+    color: Black;
+}
+.tblAvisos
+{
+    font-size: 10px;
+}
+input[type="button"], input[type="submit"], .button
+{
+    /*border-style: none;     border-color: inherit;     border-width: 0;     background-image: url('/Img/Boton.png');     background-repeat: no-repeat;*/ /*background-color: transparent; display:table-cell;*/
+    border: 2px solid #000040;
+    background-color: White;
+    cursor: pointer;
+    color: #800000;
+    height: 25px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+input[type="button"]:hover, input[type="submit"]:hover, .button:hover
+{
+    /*border-style: none;     border-color: inherit;     border-width: 0;     background-image: url('/Img/Boton.png');     background-repeat: no-repeat;*/ /*background-color: transparent; display:table-cell;*/
+    border: 2px solid #000040;
+    background-color: Blue;
+    color: white;
+    cursor: pointer;
+}
+
+/*iframe*/
+#mask
+{
+    /*position: absolute;     left: 0;     top: 0;*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9000;
+    background-color: #000000;
+    display: none;
+}
+
+#boxes .window
+{
+    /*background-image: url(/img/fondo_grande.png);*/
+    background-color: White;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 800px;
+    height: 600px;
+    display: none;
+    z-index: 9999;
+}
+
+#boxes .window2
+{
+    /*background-image: url(/img/fondo_pequeno.png);*/
+    background-color: White;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 600px;
+    height: 450px;
+    display: none;
+    z-index: 9999;
+}
+
+#boxes .window iframe, #boxes .window2 iframe
+{
+    border: 0;
+}
+
+a, .a
+{
+    color: Gray;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#boxes .msgbox
+{
+    /*background-image: url('/img/fondo_msgbox.png'); /*background-image: url(/img/mensaje.gif);*/ /*background-repeat: no-repeat;*/
+    background-color: White;
+    width: 400px; /*height: 200px;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 9999;
+    padding: 0px;
+    border: 2px solid #000040;
+}
+
+.msgboxTitulo
+{
+    height: 30px;
+    color: #FFFFFF;
+    background-color: #000040;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.msgboxContenido
+{
+    color: #000040;
+    background-color: #FFFFFF;
+    font-size: 16px; /*height: 55px;*/
+    text-align: center;
+    padding-top: 15px;
+}
+
+.itmSeleccionable
+{
+    cursor: pointer;
+    color: #000040;
+}
+.itmAvisoVencido
+{
+    color: #FF0000;
+    background-color: #FFDDDD;
+    cursor: pointer;
+}
+.btnSalir, .btnReporte, .btnConfig
+{
+    display: inline-block;
+    vertical-align: Top;
+    text-align: center;
+    width: 96px;
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    cursor: pointer;
+    font-size: small;
+}
+.btnSalir
+{
+    background-image: url('/Img/Salir.png');
+}
+.btnReporte
+{
+    background-image: url('/Img/Reporte.png');
+}
+.btnConfig
+{
+    background-image: url('/Img/Config.png');
+}
+
+.filtroActivo
+{
+    /*background-color:#8080FF;*/
+    background-image: url('/Img/filtroa.png?v=2');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: #0000FF;
+}
+.filtroInactivo
+{
+    /*background-color:#FFFFFF;*/
+    background-image: url('/Img/filtroi.png?v=2');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: #000000;
+}
+.grdOrdered
+{
+    font-style: italic;
+}
+/*Estilos de Grid según contenido*/
+.grdTexto
+{
+    text-align: left;
+}
+.grdFecha
+{
+    text-align: center;
+}
+.grdDecimal
+{
+    text-align: right;
+}
+.grdEntero
+{
+    text-align: right;
+}
+.grdBooleano
+{
+    text-align: center;
+}
+.grdCell
+{
+}
+.grdHCell
+{
+    text-align: center;
+}
+/*End GridView*/
+.filtro_body
+{
+    font-size: small;
+    background-color: White;
+    border-width: 1px;
+    border-style: solid;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #000000;
+}
+.filtro_body h3
+{
+    background-color: #000040;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.grdRow
+{
+    background-color: #FFFFFF;
+}
+.grdAlternatingRow
+{
+    background-color: #EEEEFF;
+}
+
+.invalido
+{
+    border: 2px solid #FF0000;
+}
+.btnOkTexto, .btnAceptar, .btnAceptar32, .btnAceptar32Texto, .btnAgregar, .btnAgregar32, .btnEliminar, .btnEliminar32, .btnMano, .btnMano32, .btnFlecha, .btnFlecha32, .btnGuardar, .btnGuardar32, .btnEliminar16, .btnAnterior32, .btnSiguiente32, .btnPlay, .btnPause, .btnStop
+{
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    background-position: center top;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    border: 0 !important;
+    color: #000040 !important;
+}
+.btnOkTexto:hover, .btnAceptar:hover, .btnAceptar32:hover, .btnAceptar32Texto:hover, .btnAgregar:hover, .btnAgregar32:hover, .btnEliminar:hover, .btnEliminar32:hover, .btnMano:hover, .btnMano32:hover, .btnFlecha:hover, .btnFlecha32:hover, .btnGuardar:hover, .btnGuardar32:hover, .btnEliminar16:hover, .btnAnterior32:hover, .btnSiguiente32:hover, btnPlay:hover, btnPause:hover, btnStop:hover
+{
+    background-color: transparent !important;
+    color: #0000FF !important;
+}
+.btnAceptar, .btnAgregar, .btnEliminar, .btnOkTexto, .btnMano, .btnFlecha, .btnGuardar, .btnPlay, .btnPause, .btnStop
+{
+    width: 48px !important;
+    height: 48px !important;
+}
+.btnAceptar32, .btnAceptar32Texto, .btnAgregar32, .btnEliminar32, .btnOkTexto32, .btnMano32, .btnFlecha32, .btnGuardar32, .btnAnterior32, .btnSiguiente32
+{
+    width: 32px !important;
+    height: 32px !important;
+}
+.btnEliminar16
+{
+    width: 16px !important;
+    height: 16px !important;
+}
+.btnAceptar32Texto
+{
+    padding-left: 32px;
+    width: auto !important;
+}
+/*.btnAceptar32Texto:hover
+{
+    color: Black;
+    text-decoration: underline;
+}*/
+.btnOkTexto
+{
+    background-image: url('/Img/Btn/Aceptar48.png');
+    padding-top: 48px;
+}
+.btnAceptar
+{
+    background-image: url('/Img/Btn/Aceptar48.png');
+}
+.btnAceptar32, .btnAceptar32Texto
+{
+    background-image: url('/Img/Btn/Aceptar32.png');
+    background-position: left;
+}
+.btnGuardar
+{
+    background-image: url('/Img/Btn/Guardar48.png');
+}
+.btnGuardar32
+{
+    background-image: url('/Img/Btn/Guardar32.png');
+}
+.btnAgregar
+{
+    background-image: url('/Img/Btn/Agregar48.png');
+}
+.btnAgregar32
+{
+    background-image: url('/Img/Btn/Agregar32.png');
+}
+.btnEliminar
+{
+    background-image: url('/Img/Btn/Eliminar48.png');
+}
+.btnEliminar32
+{
+    background-image: url('/Img/Btn/Eliminar32.png');
+}
+.btnEliminar16
+{
+    background-image: url('/Img/Btn/Eliminar16.png');
+}
+.btnAnterior32
+{
+    background-image: url('/Img/Btn/Anterior32.png');
+}
+.btnSiguiente32
+{
+    background-image: url('/Img/Btn/Siguiente32.png');
+}
+.btnMano
+{
+    background-image: url('/Img/Btn/Mano48.png');
+}
+.btnMano32
+{
+    background-image: url('/Img/Btn/Mano32.png');
+}
+.btnFlecha
+{
+    background-image: url('/Img/Btn/Flecha48.png');
+}
+.btnFlecha32
+{
+    background-image: url('/Img/Btn/Flecha32.png');
+}
+.btnPlay
+{
+    background-image: url('/Img/Play.png');
+}
+.btnPause
+{
+    background-image: url('/Img/Pause.png');
+}
+.btnStop
+{
+    background-image: url('/Img/Stop.png');
+}
+.contTabla
+{
+    width: 100%;
+    overflow: scroll;
+}
+.Error
+{
+    color: Red;
+    font-size: small;
+}
+.Temporizador
+{
+    font-size: x-large;
+    color: Blue;
+}
+.Vinculo
+{
+    color: Blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.TelefonoActivo
+{
+    background-color: Red;
+}

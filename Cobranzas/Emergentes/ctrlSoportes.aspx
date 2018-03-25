@@ -1,0 +1,1 @@
+﻿<%@ Page Title="" Language="C#"AutoEventWireup="true" CodeBehind="ctrlSoportes.aspx.cs" Inherits="Cobranzas.Emergentes.ctrlSoportes" %>

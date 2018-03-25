@@ -1,0 +1,48 @@
+﻿/*Calendario*/
+.cal_body
+{
+    font-size: small;
+    background-color: White;
+    border-width: 1px;
+    border-style: solid;
+}
+.cal_meses
+{
+    color: #000040;
+    font-weight: bold;
+}
+.cal_diasSemana
+{
+    background-color: #000040;
+    color: white;
+    font-weight:bold;
+}
+.cal_diaDomingo
+{
+    background-color: silver;
+    color: Black;
+    font-weight:normal;
+}
+.cal_diaNormal
+{
+    background-color: white;
+    color: Black;
+    font-weight:normal;
+}
+.cal_diaDomingo:hover, .cal_diaNormal:hover
+{
+    background-color: #000040;
+    color: White;
+}
+.cal_diaSel
+{
+    background-color: #000040;
+    color: white;
+}
+.cal_fechaNula
+{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #000040;
+}
+/*End*/

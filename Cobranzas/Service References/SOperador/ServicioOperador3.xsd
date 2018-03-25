@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiciosCobranzas.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfclsOperadoresSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsOperadoresSimple" nillable="true" type="tns:clsOperadoresSimple" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsOperadoresSimple" nillable="true" type="tns:ArrayOfclsOperadoresSimple" />
+  <xs:complexType name="clsOperadoresSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Jerarquia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsOperadoresSimple" nillable="true" type="tns:clsOperadoresSimple" />
+  <xs:complexType name="ArrayOfclsSuplentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsSuplentes" nillable="true" type="tns:clsSuplentes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsSuplentes" nillable="true" type="tns:ArrayOfclsSuplentes" />
+  <xs:complexType name="clsSuplentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cartera" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Correo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Distribucion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Indicadores" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reportes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Supervision" type="xs:boolean" />
+      <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+      <xs:element minOccurs="0" name="idSuplente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsSuplentes" nillable="true" type="tns:clsSuplentes" />
+  <xs:complexType name="clsOperadores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaEgreso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaIngreso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirmaCorreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefonos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idGrupo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+      <xs:element minOccurs="0" name="idSupervisor" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsOperadores" nillable="true" type="tns:clsOperadores" />
+  <xs:complexType name="ArrayOfclsMetasOperador">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsMetasOperador" nillable="true" type="tns:clsMetasOperador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsMetasOperador" nillable="true" type="tns:ArrayOfclsMetasOperador" />
+  <xs:complexType name="clsMetasOperador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Facturas" type="xs:int" />
+      <xs:element minOccurs="0" name="FacturasCobradas" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Meta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MetaFija" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Porc" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PorcMetaFija" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Real" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+      <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsMetasOperador" nillable="true" type="tns:clsMetasOperador" />
+  <xs:complexType name="ArrayOfclsOperadoresAsignaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsOperadoresAsignaciones" nillable="true" type="tns:clsOperadoresAsignaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsOperadoresAsignaciones" nillable="true" type="tns:ArrayOfclsOperadoresAsignaciones" />
+  <xs:complexType name="clsOperadoresAsignaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTipoCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsOperadoresAsignaciones" nillable="true" type="tns:clsOperadoresAsignaciones" />
+  <xs:complexType name="ArrayOfclsCompromisosRpt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsCompromisosRpt" nillable="true" type="tns:clsCompromisosRpt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsCompromisosRpt" nillable="true" type="tns:ArrayOfclsCompromisosRpt" />
+  <xs:complexType name="clsCompromisosRpt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MontoDolar" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontoLocal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Operador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestanteDolar" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RestanteLocal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idPersona" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsCompromisosRpt" nillable="true" type="tns:clsCompromisosRpt" />
+  <xs:complexType name="ArrayOfclsOperadoresSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsOperadoresSupervisor" nillable="true" type="tns:clsOperadoresSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsOperadoresSupervisor" nillable="true" type="tns:ArrayOfclsOperadoresSupervisor" />
+  <xs:complexType name="clsOperadoresSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MontoMeta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontoRecaudado" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idOperador" type="xs:int" />
+      <xs:element minOccurs="0" name="porc" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsOperadoresSupervisor" nillable="true" type="tns:clsOperadoresSupervisor" />
+</xs:schema>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="repAnalisis.aspx.cs" Inherits="Cobranzas.Emergentes.repAnalisis" %>
